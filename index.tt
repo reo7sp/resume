@@ -1,0 +1,85 @@
+[% INCLUDE header.tt %]
+
+<header id="main-header">
+	<table id="main-header-wrap">
+		<tr>
+			<td id="havatar"><img src="/img/avatar.png" alt="Reo_SP"></td>
+			<td id="htext">
+				<p>Hello! I'm <b>Oleg Morozenkov</b>, also known as <b>Reo_SP</b>.</p>
+				<p>I'm a developer. I have skills in <b>C++</b>, <b>Java</b>, <b>Scala</b>, <b>PHP</b>, <b>C#</b> and <b>web</b>.</p>
+				<p>Had experience with <b>unity3d</b>, <b>cocos2d-x</b>, <b>libgdx</b>, <b>android</b> and <b>git</b>.</p>
+				<p>Also, I love <b>linux</b>, <b>vim</b> and <b>ponies</b>.</p>
+				<br>
+				<a class="hcontactbtn" href="http://vk.com/reo7sp" title="VK">
+					<img src="/img/contact/vk.png">
+					<span>reo7sp</span>
+				</a>
+				<a class="hcontactbtn" href="http://twitter.com/Reo_SP" title="Twitter">
+					<img src="/img/contact/twitter.png">
+					<span>@Reo_SP</span>
+				</a>
+				<a class="hcontactbtn" href="skype:Reo_SP?add" title="Skype">
+					<img src="/img/contact/skype.png">
+					<span>Reo_SP</span>
+				</a>
+				<a class="hcontactbtn" href="http://github.com/reo7sp" title="Github">
+					<img src="/img/contact/github.png">
+					<span>reo7sp</span>
+				</a>
+				<a class="hcontactbtn" href="mailto:&#114;&#101;&#111;&#055;&#115;&#112;&#064;&#114;&#101;&#111;&#055;&#115;&#112;&#046;&#114;&#117;" title="Mail">
+					<img src="/img/contact/email.png">
+					<span>&#114;&#101;&#111;&#055;&#115;&#112;&#064;&#114;&#101;&#111;&#055;&#115;&#112;&#046;&#114;&#117;</span>
+				</a>
+			</td>
+		</tr>
+	</table>
+</header>
+
+<div id="page-wrap">
+	<div id="gblocks">
+		<section class="gblock">
+			<img class="gblock-background" src="/img/stuff/raycord-legends.jpg" alt="Raycord Legends">
+			<div class="gblock-content">
+				<p>Participating as C# developer</p>
+				<a href="http://raycordlegends.com">raycordlegends.com</a>
+			</div>
+		</section>
+		<section class="gblock">
+			<img class="gblock-background" src="/img/stuff/rocketcms.jpg" alt="Rocket CMS">
+			<div class="gblock-content">
+				<p>Created fully by me</p>
+				<a href="https://github.com/reo7sp/Rocket.CMS">github</a>
+			</div>
+		</section>
+		<section class="gblock">
+			<img class="gblock-background" src="/img/stuff/gloria-nnov.ru.jpg" alt="gloria-nnov.ru">
+			<div class="gblock-content">
+				<p>Participating as web-developer</p>
+				<a href="http://gloria-nnov.ru">gloria-nnov.ru</a>
+			</div>
+		</section>
+		<section class="gblock">
+			<img class="gblock-background" src="/img/stuff/sbf.jpg" alt="sbf">
+			<div class="gblock-content">
+				<p>Created fully by me</p>
+				<a href="https://github.com/reo7sp/SBF-Bukkit-Plugin">github</a>
+			</div>
+		</section>
+		<section class="gblock">
+			<img class="gblock-background" src="/img/stuff/socn.png" alt="socn">
+			<div class="gblock-content">
+				<p>Created fully by me</p>
+				<a href="https://github.com/reo7sp/Socn">github</a>
+			</div>
+		</section>
+		<section class="gblock">
+			<img class="gblock-background" src="/img/stuff/mclauncher.png" alt="mclauncher">
+			<div class="gblock-content">
+				<p>Created fully by me</p>
+				<a href="https://github.com/reo7sp/MCLauncher">github</a>
+			</div>
+		</section>
+	</div>
+</div>
+
+[% INCLUDE footer.tt %]
