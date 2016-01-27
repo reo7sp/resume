@@ -1,0 +1,27 @@
+{
+  "name": "reo7sp.ru",
+  "version": "1.0.0",
+  "description": "Reo_SP's site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reo_SP",
+  "license": "MIT",
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-cached": "^1.0.2",
+    "gulp-coffee": "^2.3.1",
+    "gulp-concat": "^2.5.0",
+    "gulp-less": "^3.0.0",
+    "gulp-livereload": "^3.7.0",
+    "gulp-load-plugins": "^0.8.0",
+    "gulp-minify-css": "^0.4.6",
+    "gulp-minify-html": "^0.1.8",
+    "gulp-nunjucks-render": "^0.1.3",
+    "gulp-remember": "^0.3.0",
+    "gulp-uglify": "^1.1.0"
+  }
+}

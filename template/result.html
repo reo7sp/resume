@@ -1,0 +1,48 @@
+{% extends "skeleton.html" %}
+
+{% set tags = {
+	cpp: "<div class=\"tag tag-cpp\">c/c++</div>",
+	java: "<div class=\"tag tag-java\">java</div>",
+	scala: "<div class=\"tag tag-scala\">scala</div>",
+	csharp: "<div class=\"tag tag-csharp\">c#</div>",
+	php: "<div class=\"tag tag-php\">php</div>",
+	htmlcss: "<div class=\"tag tag-htmlcss\">html&amp;css</div>",
+	js: "<div class=\"tag tag-js\">js</div>",
+	coffeescript: "<div class=\"tag tag-coffeescript\">coffeescript</div>",
+	bem: "<div class=\"tag tag-bem\">BEM</div>",
+	less: "<div class=\"tag tag-less\">less</div>",
+	stylus: "<div class=\"tag tag-stylus\">stylus</div>",
+	gulp: "<div class=\"tag tag-gulp\">gulp</div>",
+	jquery: "<div class=\"tag tag-jquery\">jquery</div>",
+	backbone: "<div class=\"tag tag-backbone\">backbone</div>",
+	vim: "<div class=\"tag tag-vim\">vim</div>",
+	git: "<div class=\"tag tag-git\">git</div>",
+	nginx: "<div class=\"tag tag-nginx\">nginx</div>",
+	linux: "<div class=\"tag tag-linux\">linux</div>",
+	docker: "<div class=\"tag tag-docker\">docker</div>",
+	bash: "<div class=\"tag tag-bash\">bash</div>",
+	qt: "<div class=\"tag tag-qt\">qt</div>",
+	cocos2dx: "<div class=\"tag tag-cocos2d\">cocos2d-x</div>",
+	libgdx: "<div class=\"tag tag-libgdx\">libgdx</div>",
+	unity3d: "<div class=\"tag tag-unity3d\">unity3d</div>",
+	poco: "<div class=\"tag tag-poco\">poco</div>",
+	boost: "<div class=\"tag tag-boost\">boost</div>",
+	android: "<div class=\"tag tag-android\">android</div>"
+}
+%}
+
+{% block title %}
+	{{ sitetitle }}
+{% endblock %}
+
+{% block desc %}
+	{{ introtitle }}. {{ introtext }}
+{% endblock %}
+
+{% block body %}
+	{% include "intro.html" %}
+	{% include "projects.html" %}
+	{% include "contacts.html" %}
+	{% include "footer.html" %}
+{% endblock %}
+

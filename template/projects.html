@@ -1,0 +1,29 @@
+{% macro projbtn(image, imagealt, tags, desc, link, linktitle) %}
+	<section class="proj-view pure-u-1 pure-u-sm-1-2 pure-u-md-1-3 pure-u-lg-1-4">
+		<a href="{{ link }}">
+			<img class="pure-img" src="{{ image }}" alt="{{ imagealt }}">
+		</a>
+		<div class="tags">{{ tags }}</div>
+		<p>{{ desc }}</p>
+		<a href="{{ link }}">{{ linktitle }}</a>
+	</section>
+{% endmacro %}
+
+<section class="page-section">
+	<div class="inner-wrapper page-g">
+		<!--<h1>{{ projectstitle }}</h1>-->
+
+		<!--{{ projbtn("img/proj/raycord.jpg", "Raycord", tags.csharp + tags.unity3d, raycorddesc, "http://raycordlegends.com", "raycordlegends.com") }}-->
+		<!--{{ projbtn("img/proj/rocketcms.jpg", "Rocket.CMS", tags.cpp + tags.poco + tags.htmlcss + tags.bem + tags.js + tags.coffeescript + tags.stylus + tags.backbone + tags.docker, rocketcmsdesc, "https://github.com/reo7sp/Rocket.CMS", "github") }}-->
+		<!--{{ projbtn("img/proj/tgbot-cpp.jpg", "tgbot-cpp", tags.cpp + tags.boost, tgbotcppdesc, "https://github.com/reo7sp/tgbot-cpp", "github") }}-->
+		<!--{{ projbtn("img/proj/gloria-nnov.ru.jpg", "ATK Gloria", tags.htmlcss + tags.php + tags.less, gloriadesc, "http://gloria-nnov.ru", "gloria-nnov.ru") }}-->
+		<!--{{ projbtn("img/proj/boardpp.png", "Board++", tags.scala + tags.libgdx, boardppdesc, "https://github.com/reo7sp/BoardPP", "github") }}-->
+		<!--{{ projbtn("img/proj/socn.png", "Socn", tags.java, socndesc, "https://github.com/reo7sp/Socn", "github") }}-->
+		<!--{{ projbtn("img/proj/gravitycon.jpg", "GravityCon", tags.htmlcss + tags.bem + tags.less, gravitycondesc, "http://gravitycon.ru", "gravitycon.ru") }}-->
+
+		<div class="contact-btn">
+			<a href="https://github.com/reo7sp"><img src="img/icon/github.png"></a>
+			<p><a href="https://github.com/reo7sp">{{ githubtitle }}</a></p>
+		</div>
+	</div>
+</section>

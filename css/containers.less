@@ -1,0 +1,74 @@
+#intro-section {
+	display: flex;
+	width: 100%;
+	height: 768px;
+	background-color: #26a;
+	background-image: url(img/background-intro.jpg);
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	text-align: center;
+	line-height: 1.5em;
+
+	.inner-wrapper {
+		max-width: 768px;
+		margin: auto auto;
+		padding: 16px;
+	}
+
+	.switch-lang-btn {
+		display: block;
+		color: #fff;
+		margin: 32px;
+
+		&:hover {
+			color: #f88;
+		}
+	}
+
+	p, a {
+		font-family: Tahoma, Helvetica Neue, Arial, sans-serif;
+		font-size: 125%;
+		font-weight: bold;
+	}
+}
+
+.page-section {
+	display: flex;
+	padding: 32px 64px;
+
+	h1 {
+		text-align: center;
+	}
+
+	.inner-wrapper {
+		margin: 0 auto;
+		max-width: 1280px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.page-section {
+		padding: 32px 16px;
+	}
+}
+
+.proj-view {
+	box-sizing: border-box;
+	padding: 8px;
+	margin-bottom: 16px;
+
+	img {
+		margin-bottom: 16px;
+		transition-duration: 0.25s;
+		width: 100%;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+#pagefooter {
+	text-align: center;
+}
