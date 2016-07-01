@@ -1,5 +1,24 @@
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"
+@import "../../node_modules/purecss/build/base-min"
 
+@import "container"
 @import "section-with-margin"
 @import "contacts-links"
 @import "storm"
+
+html
+  height: 100%
+
+body
+  min-height: 100%
+  display: flex
+  flex-direction: column
+
+a
+  color: #4f87a0
+  text-decoration: none
+  vertical-align: super
+
+  &:hover
+    color: #23527c
+    text-decoration: underline
+
