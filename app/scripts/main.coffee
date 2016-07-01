@@ -1,1 +1,1 @@
-require './storm.coffee'
+require './giraffe-background.coffee'

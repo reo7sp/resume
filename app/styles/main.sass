@@ -3,7 +3,7 @@
 @import "container"
 @import "section-with-margin"
 @import "contacts-links"
-@import "storm"
+@import "giraffe-background"
 
 html
   height: 100%
@@ -14,11 +14,18 @@ body
   flex-direction: column
 
 a
-  color: #4f87a0
+  color: #0093d2
   text-decoration: none
-  vertical-align: super
 
   &:hover
-    color: #23527c
+    color: #0067a8
     text-decoration: underline
 
+.visible-xs
+  display: none
+
+  @media (max-width: 640px)
+    display: block
+
+.gray
+  color: gray
