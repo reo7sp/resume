@@ -4,9 +4,9 @@ $ = require 'jquery-slim'
 withGiraffe = null
 
 reInit = ->
-  wasWithKitten = withGiraffe
+  wasWithGiraffe = withGiraffe
   withGiraffe = $(document).width() > 640
-  if wasWithKitten != withGiraffe
+  if wasWithGiraffe != withGiraffe
     if withGiraffe
       $('.giraffe-background_mobile').remove()
       $(document.body).append '<img class="giraffe-background giraffe-background_giraffe" src="images/giraffe.png">'
@@ -20,16 +20,16 @@ reInit = ->
   return
 
 moveGiraffe = (percentX, percentY) ->
-  giraffe = $('.giraffe-background_dialog')
-  giraffe.css('right', "#{150 + percentX * 120}px")
-  giraffe.css('top', "#{250 + -percentY * 40}px")
+  dialog = $('.giraffe-background_dialog')
+  dialog.css('right', "#{150 + percentX * 120}px")
+  dialog.css('top', "#{250 + -percentY * 40}px")
 
   giraffe = $('.giraffe-background_giraffe')
   giraffe.css('right', "#{percentX * 50}px")
   giraffe.css('bottom', "#{-15 + percentY * 15}px")
 
-  sky = $('.giraffe-background_back')
-  sky.css('background-position', "#{-50 + -percentX * 20}px #{-50 + -percentY * 4}px")
+  back = $('.giraffe-background_back')
+  back.css('background-position', "#{-50 + -percentX * 20}px #{-50 + -percentY * 4}px")
   return
 
 
