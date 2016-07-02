@@ -21,8 +21,8 @@ reInit = ->
 
 moveGiraffe = (percentX, percentY) ->
   dialog = $('.giraffe-background_dialog')
-  dialog.css('right', "#{150 + percentX * 120}px")
-  dialog.css('top', "#{250 + -percentY * 40}px")
+  dialog.css('right', "#{150 + percentX * 140}px")
+  dialog.css('top', "#{250 + -percentY * 70}px")
 
   giraffe = $('.giraffe-background_giraffe')
   giraffe.css('right', "#{percentX * 50}px")
