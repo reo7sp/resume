@@ -190,7 +190,7 @@ gulp.task 'build:dist', (callback) ->
 gulp.task 'deploy', ['build:dist'], ->
   surgeOptions =
     project: './dist'
-    domain: 'www.reo7sp.ru'
+    domain: 'reo7sp.ru'
 
   $.surge surgeOptions
 
