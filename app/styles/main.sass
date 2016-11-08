@@ -1,13 +1,13 @@
-@import "../../node_modules/purecss/build/base-min"
+@import "npm://purecss/build/base-min"
 
 @import "container"
 @import "section-with-margin"
 @import "contacts-links"
 @import "giraffe-background"
+@import "work"
 
 html
   height: 100%
-  overflow: hidden
 
 body
   min-height: 100%
@@ -22,10 +22,10 @@ a
     color: #0067a8
     text-decoration: underline
 
-.visible-xs
+.visible-md
   display: none
 
-  @media (max-width: 640px)
+  @media (max-width: 992px)
     display: block
 
 .gray

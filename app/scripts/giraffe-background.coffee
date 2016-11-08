@@ -1,40 +1,38 @@
 $ = require 'jquery-slim'
 
 
-withGiraffe = null
+isWithGiraffe = null
 
 reInit = ->
-  wasWithGiraffe = withGiraffe
-  withGiraffe = $(document).width() > 640
-  if wasWithGiraffe != withGiraffe
-    if withGiraffe
+  wasWithGiraffe = isWithGiraffe
+  isWithGiraffe = $(document).width() > 992
+  if wasWithGiraffe != isWithGiraffe
+    if isWithGiraffe
       $('.giraffe-background_mobile').remove()
-      $(document.body).append '<img class="giraffe-background giraffe-background_giraffe" src="images/giraffe.png">'
-      $(document.body).append '<div class="giraffe-background giraffe-background_dialog">Hi there</div>'
-      $(document.body).append '<div class="giraffe-background giraffe-background_back" src="images/background.jpg"></div>'
+      $(document.body).append('<img class="giraffe-background giraffe-background_giraffe" src="images/giraffe.png">')
+      $(document.body).append('<div class="giraffe-background giraffe-background_dialog">Hi there</div>')
+      $(document.body).append('<div class="giraffe-background giraffe-background_back" src="images/background.jpg"></div>')
     else
       $('.giraffe-background_giraffe').remove()
       $('.giraffe-background_dialog').remove()
       $('.giraffe-background_back').remove()
-      $(document.body).append '<img class="giraffe-background giraffe-background_mobile" src="images/giraffe-mobile.jpg">'
-  return
+      $(document.body).append('<img class="giraffe-background giraffe-background_mobile" src="images/giraffe-mobile.jpg">')
 
 moveGiraffe = (percentX, percentY) ->
   dialog = $('.giraffe-background_dialog')
-  dialog.css('right', "#{150 + percentX * 140}px")
-  dialog.css('top', "#{250 + -percentY * 70}px")
+  dialog.css('right', "#{100 + percentX * 140}px")
+  dialog.css('top', "#{250 + -percentY * 75}px")
 
   giraffe = $('.giraffe-background_giraffe')
-  giraffe.css('right', "#{percentX * 50}px")
-  giraffe.css('bottom', "#{-15 + percentY * 15}px")
+  giraffe.css('right', "#{-50 + percentX * 50}px")
+  giraffe.css('bottom', "#{-25 + percentY * 25}px")
 
   back = $('.giraffe-background_back')
-  back.css('background-position', "#{-50 + -percentX * 20}px #{-50 + -percentY * 4}px")
-  return
+  back.css('background-position', "#{-50 + -percentX * 20}px #{-50 + -percentY * 5}px")
 
 
 $(document).mousemove (e) ->
-  if withGiraffe
+  if isWithGiraffe
     percentX = e.clientX / $(window).width()
     percentY = e.clientY / $(window).height()
     moveGiraffe percentX, percentY
@@ -44,6 +42,6 @@ $(window).resize ->
 
 $(document).ready ->
   reInit()
-  if withGiraffe
-    moveGiraffe 0, 0
+  if isWithGiraffe
+    moveGiraffe(0, 0)
 

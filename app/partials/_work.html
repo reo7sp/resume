@@ -1,0 +1,232 @@
+{% macro item(title, labels, labelsClass, description, link, linkTitle) %}
+  <li class="work__list-elem work-item">
+    <div class="work-item__title">{{ title }}</div>
+    <div class="work-item__info-labels">
+      {%- for i in range(0, labels | length) -%}
+        <div class="work-item__info-label work-item__info-label_{{ labelsClass[i] }}">{{ labels[i] }}</div>
+      {%- endfor -%}
+    </div>
+    {% if description %}
+      <div class="work-item__description">{{ description }}</div>
+    {% endif %}
+    {% if link %}
+      <a class="work-item__link" target="_blank" href="{{ link }}">{{ linkTitle }}</a>
+    {% endif %}
+  </li>
+{% endmacro %}
+
+
+<h2>My work</h2>
+
+<h3>Game development</h3>
+<ul class="work">
+  {{ item(
+      'Raycord Legends',
+      ['worked 2014–2016', 'unity3d', 'uframe', 'spine'],
+      ['employment', 'unity', 'unity', 'unity'],
+      'My Little Pony and Rayman Legends crossover game. Features cool graphics',
+      'http://raycordlegends.com',
+      'raycordlegends.com'
+  ) }}
+
+  {{ item(
+      'MARS 2000',
+      ['freelance', 'unity3d', 'steam greenlight'],
+      ['employment', 'unity', 'steam'],
+      'Top-down oldschool shooter',
+      'https://vk.com/mars_2k',
+      'VK'
+  ) }}
+
+  {{ item(
+      'Let\'s nuke them',
+      ['in development', 'cocos2d-x', 'coffeescript'],
+      ['employment', 'cocos', 'coffee'],
+      'Strategy game'
+  ) }}
+
+  {{ item(
+      'Kaniku',
+      ['open source', 'cocos2d-x', 'coffeescript'],
+      ['oss', 'cocos', 'coffee'],
+      'MVC microframework for cocos2d-x javascript games',
+      'https://github.com/reo7sp/kaniku',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'Cocos starter kit',
+      ['open source', 'yeoman', 'cocos2d-x', 'coffeescript'],
+      ['oss', 'yeoman', 'cocos', 'coffee'],
+      'Boilerplate for cocos2d-x javascript games',
+      'https://github.com/reo7sp/cocos-starter-kit',
+      'GitHub'
+  ) }}
+</ul>
+
+<h3>Science</h3>
+<ul class="work">
+  {{ item(
+      'Voice to vector',
+      ['neural networks', 'open source', 'python', 'theano', 'lasagne'],
+      ['neuro', 'oss', 'python', 'python', 'python'],
+      'Transforms voice to vector so you can compare them',
+      'https://github.com/xenx/speech',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'Face3dMatch',
+      ['computer vision', 'open source', 'android', 'scala'],
+      ['compvis', 'oss', 'android', 'scala'],
+      'Android app which authorizes user using 3d model of his face',
+      'https://github.com/reo7sp/Face3dMatch',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'WaveTest',
+      ['open source', 'scala'],
+      ['oss', 'scala'],
+      'Researching a bunch of monochromatic waves moving in time',
+      'https://github.com/reo7sp/WaveTest',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'FourierTransformTest',
+      ['open source', 'scala'],
+      ['oss', 'scala'],
+      'Researching fourier transform of wave moving in time',
+      'https://github.com/reo7sp/FourierTransformTest',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'MagneticTest',
+      ['open source', 'c', 'opengl'],
+      ['oss', 'cpp', 'opengl'],
+      'Researching magnetic field',
+      'https://github.com/reo7sp/MagneticTest',
+      'GitHub'
+  ) }}
+</ul>
+
+<h3>Web development</h3>
+<ul class="work">
+  {{ item(
+      'gloria-nnov.ru',
+      ['working since 2013', 'website', 'ruby'],
+      ['employment', 'site', 'ruby'],
+      'Website of travel company in Nizhny Novgorod',
+      'http://gloria-nnov.ru',
+      'gloria-nnov.ru'
+  ) }}
+
+  {{ item(
+      'Thylogale',
+      ['web app', 'open source', 'ruby', 'rails'],
+      ['webapp', 'oss', 'ruby', 'rails'],
+      'CMS for static sites',
+      'https://github.com/reo7sp/thylogale',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'Reo web starter kit',
+      ['open source', 'yeoman', 'gulp'],
+      ['oss', 'yeoman', 'gulp'],
+      'Boilerplate for sites',
+      'https://github.com/reo7sp/reo-web-starter-kit',
+      'GitHub'
+  ) }}
+</ul>
+
+<h3>Tools &amp; Misc</h3>
+<ul class="work">
+  {{ item(
+      'tgbot-cpp',
+      ['open source', 'c++', 'boost', 'telegram'],
+      ['oss', 'cpp', 'cpp', 'telegram'],
+      'C++ library for Telegram bot API',
+      'https://github.com/reo7sp/tgbot-cpp',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'coffeescript-accessors',
+      ['open source', 'coffeescript'],
+      ['oss', 'coffee'],
+      'Fancy getter and setter generation in CoffeeScript',
+      'https://github.com/reo7sp/coffeescript-accessors',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'BoardPP',
+      ['open source', 'scala', 'libgdx'],
+      ['oss', 'scala', 'libgdx'],
+      'Interactive virtual writing board',
+      'https://github.com/reo7sp/BoardPP',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'GoToHackTestTask',
+      ['open source', 'scala'],
+      ['oss', 'scala'],
+      'Test task for GoToHack hackathon',
+      'https://github.com/reo7sp/GoToHackTestTask',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'dokku-mariadb-sc',
+      ['open source', 'bash', 'dokku', 'docker'],
+      ['oss', 'bash', 'dokku', 'docker'],
+      'MariaDB in single container Dokku plugin',
+      'https://github.com/reo7sp/dokku-mariadb-sc',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'Socn',
+      ['open source', 'java'],
+      ['oss', 'java'],
+      'VK and Twitter desktop notifications',
+      'https://github.com/reo7sp/Socn',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'phabricator-docker',
+      ['open source', 'docker', 'bash'],
+      ['oss', 'docker', 'bash'],
+      'Docker image for Phabricator',
+      'https://github.com/reo7sp/phabricator-docker',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'SBF Bukkit Plugin',
+      ['open source', 'java', 'minecraft'],
+      ['oss', 'java', 'minecraft'],
+      'SBF Minecraft server\'s plugin',
+      'https://github.com/reo7sp/SBF-Bukkit-Plugin',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'ReoVimRC',
+      ['open source', 'vim'],
+      ['oss', 'vim'],
+      'Vim config',
+      'https://github.com/reo7sp/ReoVimRC',
+      'GitHub'
+  ) }}
+</ul>
+
+<div class="work-github">
+  <img class="contacts-links__icon" src="images/icons/github.png" alt="GitHub">
+  <a class="contacts-links__link" href="https://github.com/reo7sp">See full list of my open source projects on GitHub</a>
+</div>

@@ -1,16 +1,36 @@
-gulp = require 'gulp'
-$ = require('gulp-load-plugins')()
+# Based on https://github.com/reo7sp/reo-web-starter-kit
+gulp = require "gulp"
+$ = require("gulp-load-plugins")()
 
-fs = require 'fs'
-_ = require 'lodash'
+fs = require "fs"
+_ = require "lodash"
+del = require "del"
+runSequence = require "run-sequence"
+browserSync = require "browser-sync"
+browserify = require "browserify"
+browserifyInc = require "browserify-incremental"
+source = require "vinyl-source-stream"
+buffer = require "vinyl-buffer"
+sassyNpmImporter = require "sassy-npm-importer"
 
-del = require 'del'
-runSequence = require 'run-sequence'
-browserSync = require 'browser-sync'
 
-browserify = require 'browserify'
-source = require 'vinyl-source-stream'
-buffer = require 'vinyl-buffer'
+sourceRoot         = "app"
+stylesSourceRoot   = "#{sourceRoot}/styles"
+scriptsSourceRoot  = "#{sourceRoot}/scripts"
+htmlSourceRoot     = sourceRoot
+imagesSourceRoot   = "#{sourceRoot}/images"
+
+tmpDistRoot        = ".tmp"
+stylesTmpDistRoot  = "#{tmpDistRoot}/styles"
+scriptsTmpDistRoot = "#{tmpDistRoot}/scripts"
+htmlTmpDistRoot    = tmpDistRoot
+imagesTmpDistRoot  = "#{tmpDistRoot}/images"
+
+distRoot           = "dist"
+stylesDistRoot     = "#{distRoot}/styles"
+scriptsDistRoot    = "#{distRoot}/scripts"
+htmlDistRoot       = distRoot
+imagesDistRoot     = "#{distRoot}/images"
 
 
 # --- Utils --- #
@@ -22,82 +42,83 @@ file_exists = (file) ->
 
 
 plumberOptions =
-  errorHandler: (err) ->
-    $.util.beep()
-    $.util.log(
-      $.util.colors.cyan('Plumber') + $.util.colors.red(' found unhandled error:\n'),
-      err.toString()
-    )
-    this.emit("end")
+  errorHandler: $.notify.onError("<%= error.message %>")
 
 
 # --- Styles --- #
-stylesMain = _.find ['app/styles/main.sass', 'app/styles/main.scss', 'app/styles/main.css'], file_exists
-stylesMain ?= 'app/styles/main.sass'
-styles = 'app/styles/**/*.{sass,scss,css}'
+possibleStylesMain = ["#{stylesSourceRoot}/main.sass", "#{stylesSourceRoot}/main.scss", "#{stylesSourceRoot}/main.css"]
+stylesMain = _.find(possibleStylesMain, file_exists)
+stylesMain ?= possibleStylesMain[0]
+styles = "#{stylesSourceRoot}/**/*.{sass,scss,css}"
 
 stylesPipe = ->
   gulp.src stylesMain
-    .pipe $.plumber plumberOptions
+    .pipe $.plumber(plumberOptions)
     .pipe $.sourcemaps.init()
-    .pipe $.sass.sync()
-    .pipe $.rename 'app.css'
+    .pipe $.sass.sync(importer: sassyNpmImporter())
+    .pipe $.rename("app.css")
     .pipe $.autoprefixer()
 
-gulp.task 'styles', ->
+gulp.task "styles:dev", ->
   stylesPipe()
-    .pipe $.sourcemaps.write '.'
-    .pipe gulp.dest '.tmp/styles'
+    .pipe $.sourcemaps.write(".")
+    .pipe gulp.dest stylesTmpDistRoot
 
-gulp.task 'styles:dist', ->
-  cssnanoOptions =
-    discardComments:
-      removeAll: true
-
+gulp.task "styles:dist", ->
   stylesPipe()
-    .pipe $.cssnano(cssnanoOptions)
-    .pipe gulp.dest 'dist/styles'
+    .pipe $.csso(comments: false)
+    .pipe $.rev()
+    .pipe gulp.dest stylesDistRoot
+    .pipe $.rev.manifest(merge: true)
+    .pipe gulp.dest "."
 
 
 # --- Scripts --- #
-scriptsMain = _.find ['app/scripts/main.coffee', 'app/scripts/main.js'], file_exists
-scriptsMain ?= 'app/scripts/main.coffee'
-scripts = 'app/scripts/**/*.{coffee,js}'
+possibleScriptsMain = ["#{scriptsSourceRoot}/main.coffee", "#{scriptsSourceRoot}/main.js"]
+scriptsMain = _.find(possibleScriptsMain, file_exists)
+scriptsMain ?= possibleScriptsMain[0]
+scripts = "#{scriptsSourceRoot}/**/*.{coffee,js}"
 
 scriptsPipe = ->
-  browserify scriptsMain, {debug: true}
-    .transform 'coffeeify'
+  b = browserify(scriptsMain, _.extend(browserifyInc.args, debug: true))
+  browserifyInc(b, cacheFile: "./browserify-cache.json")
+  b
+    .transform("coffeeify")
     .bundle()
-    .on 'error', plumberOptions.errorHandler
-    .pipe source 'app.js'
+    .on("error", plumberOptions.errorHandler)
+    .pipe source("app.js")
     .pipe buffer()
-#    .pipe $.plumber plumberOptions
 
-gulp.task 'scripts', ->
+gulp.task "scripts:dev", ->
   scriptsPipe()
-    .pipe $.sourcemaps.init {loadMaps: true}
-    .pipe $.sourcemaps.write '.'
-    .pipe gulp.dest '.tmp/scripts'
+    .pipe $.sourcemaps.init(loadMaps: true)
+    .pipe $.sourcemaps.write(".")
+    .pipe gulp.dest scriptsTmpDistRoot
 
-gulp.task 'scripts:dist', ->
+gulp.task "scripts:dist", ->
   scriptsPipe()
     .pipe $.uglify()
-    .pipe gulp.dest 'dist/scripts'
+    .pipe $.rev()
+    .pipe gulp.dest scriptsDistRoot
+    .pipe $.rev.manifest(merge: true)
+    .pipe gulp.dest "."
 
 
 # --- HTMLs --- #
-htmls = ['app/**/*.html', '!app/**/_*.html']
+htmls = "#{htmlSourceRoot}/**/*.{html,njk}"
+htmlsWithoutPartials = ["#{htmlSourceRoot}/**/*.html", "!#{htmlSourceRoot}/**/_*.html"]
 
 htmlsPipe = ->
-  gulp.src htmls
-    .pipe $.plumber plumberOptions
-    .pipe $.nunjucksRender {path: 'app'}
+  gulp.src htmlsWithoutPartials
+    .pipe $.plumber(plumberOptions)
+    .pipe $.nunjucksRender(path: htmlSourceRoot)
 
-gulp.task 'htmls', ->
+gulp.task "htmls:dev", ->
   htmlsPipe()
-    .pipe gulp.dest '.tmp'
+    .pipe $.cached("htmls")
+    .pipe gulp.dest htmlTmpDistRoot
 
-gulp.task 'htmls:dist', ->
+gulp.task "htmls:dist", ->
   htmlminOptions =
     removeComments: true
     collapseWhitespace: true
@@ -110,88 +131,103 @@ gulp.task 'htmls:dist', ->
     removeOptionalTags: true
 
   htmlsPipe()
-    .pipe $.htmlmin htmlminOptions
-    .pipe gulp.dest 'dist'
+    .pipe $.cached("htmls:dist")
+    .pipe $.revReplace(manifest: gulp.src("./rev-manifest.json"))
+    .pipe $.htmlmin(htmlminOptions)
+    .pipe gulp.dest htmlDistRoot
 
 
 # --- Images --- #
-images = 'app/images/**/*'
+images = "#{imagesSourceRoot}/**/*"
 
 imagesPipe = ->
   gulp.src images
-    .pipe $.plumber plumberOptions
+    .pipe $.plumber(plumberOptions)
 
-gulp.task 'images', ->
+gulp.task "images:dev", ->
   imagesPipe()
-    .pipe $.cached 'images'
-    .pipe gulp.dest '.tmp/images'
+    .pipe $.cached("images")
+    .pipe gulp.dest imagesTmpDistRoot
 
-gulp.task 'images:dist', ->
+gulp.task "images:dist", ->
   imagesPipe()
-    .pipe $.cached 'images:dist'
-    .pipe $.imagemin({progressive: true, interlaced: true})
-    .pipe gulp.dest 'dist/images'
+    .pipe $.cached("images:dist")
+    .pipe $.imagemin(progressive: true, interlaced: true)
+    .pipe gulp.dest imagesDistRoot
 
 
 #
-sourcesTasks = ['styles', 'scripts', 'htmls', 'images']
+sourcesTasks = ["styles", "scripts", "htmls", "images"]
 sourcesFileGroups = [styles, scripts, htmls, images]
 sources = _.flattenDeep(sourcesFileGroups)
-everything = 'app/**/*'
+everything = "#{sourceRoot}/**/*"
 
 
 # --- Other --- #
-other = _.concat everything, _.map(sources, (match) -> "#{if match[0] != '!' then '!' else ''}#{match}")
+other = _.concat(everything, _.map(sources, (match) -> "#{if match[0] != "!" then "!" else ""}#{match}"))
 
 otherPipe = ->
   gulp.src other
-    .pipe $.plumber plumberOptions
-    .pipe gulp.dest('dist')
+    .pipe $.plumber(plumberOptions)
+    .pipe $.cached("other")
+    .pipe gulp.dest distRoot
 
-gulp.task 'other', ->
+gulp.task "other:dev", ->
   otherPipe()
 
-gulp.task 'other:dist', ->
+gulp.task "other:dist", ->
   otherPipe()
 
 
 #
-allSourcesTasks = _.concat sourcesTasks, 'other'
-allSourcesDistTasks = _.map allSourcesTasks, (task) -> "#{task}:dist"
-allSourcesFileGroups = _.concat sourcesFileGroups, [other]
+allSourcesTasks = _.concat(sourcesTasks, "other")
+allSourcesDevTasks = _.map(allSourcesTasks, (task) -> "#{task}:dev")
+allSourcesDistTasks = _.map(allSourcesTasks, (task) -> "#{task}:dist")
+allSourcesFileGroups = _.concat(sourcesFileGroups, [other])
 
 
 # --- Main --- #
-gulp.task 'clean', ->
-  del ['.tmp', 'dist/*'], {dot: true}
+gulp.task "clean", ->
+  del([tmpDistRoot, "#{distRoot}/*", "rev-manifest.json"], dot: true)
 
-gulp.task 'compile', allSourcesTasks
+gulp.task "compile:dev", allSourcesDevTasks
 
-gulp.task 'compile:dist', allSourcesDistTasks
+gulp.task "compile:dist", (callback) ->
+  runSequence _.without(allSourcesDistTasks, "htmls:dist"), "htmls:dist", callback # hack for gulp-rev plugin
 
-gulp.task 'serve', ['compile'], ->
-  browserSync {notify: false, server: ['.tmp', 'dist']}
-  for [name, group] in _.zip allSourcesTasks, allSourcesFileGroups
+gulp.task "watch", ["compile:dev"], ->
+  for [name, group] in _.zip allSourcesDevTasks, allSourcesFileGroups
+    gulp.watch group, [name]
+  return
+
+gulp.task "serve", ["compile:dev"], ->
+  browserSync(notify: false, server: [tmpDistRoot, distRoot])
+  for [name, group] in _.zip allSourcesDevTasks, allSourcesFileGroups
     gulp.watch group, [name, browserSync.reload]
   return
 
-gulp.task 'serve:dist', ['compile:dist'], ->
-  browserSync {notify: false, server: ['dist']}
-  for [name, group] in _.zip allSourcesDistTasks, allSourcesFileGroups
+gulp.task "watch:dist", ["compile:dist"], ->
+  for [name, group] in _.zip(allSourcesDistTasks, allSourcesFileGroups)
+    gulp.watch group, [name]
+  return
+
+gulp.task "serve:dist", ["compile:dist"], ->
+  browserSync(notify: false, server: [distRoot])
+  for [name, group] in _.zip(allSourcesDistTasks, allSourcesFileGroups)
     gulp.watch group, [name, browserSync.reload]
   return
 
-gulp.task 'build', (callback) ->
-  runSequence 'clean', 'compile', callback
-  
-gulp.task 'build:dist', (callback) ->
-  runSequence 'clean', 'compile:dist', callback
+gulp.task "build:dev", (callback) ->
+  runSequence "clean", "compile:dev", callback
 
-gulp.task 'deploy', ['build:dist'], ->
+gulp.task "build:dist", (callback) ->
+  runSequence "clean", "compile:dist", callback
+
+gulp.task "deploy", ["build:dist"], ->
   surgeOptions =
-    project: './dist'
-    domain: 'reo7sp.ru'
+    project: "./#{distRoot}"
+    domain: "reo7sp.ru"
 
-  $.surge surgeOptions
+  $.surge(surgeOptions)
 
-gulp.task 'default', ['build:dist']
+gulp.task "default", ["build:dist"]
