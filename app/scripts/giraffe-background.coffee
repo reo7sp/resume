@@ -1,11 +1,15 @@
 $ = require 'jquery-slim'
 
 
+width = null
+height = null
 isWithGiraffe = null
 
 reInit = ->
+  width = $(window).width()
+  height = $(window).height()
   wasWithGiraffe = isWithGiraffe
-  isWithGiraffe = $(document).width() > 992
+  isWithGiraffe = width > 992
   if wasWithGiraffe != isWithGiraffe
     if isWithGiraffe
       $('.giraffe-background_mobile').remove()
@@ -33,9 +37,9 @@ moveGiraffe = (percentX, percentY) ->
 
 $(document).mousemove (e) ->
   if isWithGiraffe
-    percentX = e.clientX / $(window).width()
-    percentY = e.clientY / $(window).height()
-    moveGiraffe percentX, percentY
+    percentX = e.clientX / width
+    percentY = e.clientY / height
+    moveGiraffe(percentX, percentY)
 
 $(window).resize ->
   reInit()
