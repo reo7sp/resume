@@ -1,4 +1,4 @@
-{% macro item(title, labels, labelsClass, description, link, linkTitle) %}
+{% macro item(title, labels, labelsClass, description, link, linkTitle, secondLink, secondLinkTitle) %}
   <li class="work__list-elem work-item">
     <div class="work-item__title">{{ title }}</div>
     <div class="work-item__info-labels">
@@ -9,9 +9,14 @@
     {% if description %}
       <div class="work-item__description">{{ description }}</div>
     {% endif %}
-    {% if link %}
-      <a class="work-item__link" target="_blank" href="{{ link }}">{{ linkTitle }}</a>
-    {% endif %}
+    <div class="work-item__links">
+      {% if link %}
+        <a class="work-item__link" target="_blank" href="{{ link }}">{{ linkTitle }}</a>
+      {% endif %}
+      {% if secondLink %}
+        <a class="work-item__link" target="_blank" href="{{ secondLink }}">{{ secondLinkTitle }}</a>
+      {% endif %}
+    </div>
   </li>
 {% endmacro %}
 
@@ -26,7 +31,9 @@
       ['neuro', 'oss', 'python', 'python', 'python'],
       'Transforms voice to vector so you can compare them',
       'https://github.com/xenx/speech',
-      'GitHub'
+      'GitHub',
+      'http://www.slideshare.net/OlegMorozenkov/speechlock-voice-to-vector-voice-similarity',
+      'SlideShare'
   ) }}
 
   {{ item(
@@ -64,6 +71,17 @@
       'https://github.com/reo7sp/MagneticTest',
       'GitHub'
   ) }}
+
+  {{ item(
+      'GoToHack2\'s project',
+      ['hackathon', 'natural text processing', 'open source', 'python', 'lda'],
+      ['employment', 'nlp', 'oss', 'python', 'lda'],
+      'We worked on case by MTS company: prediction of post popularity in VK group of TalentEdme project',
+      'http://www.slideshare.net/OlegMorozenkov/gotohack2-data-science-hackathon',
+      'SlideShare',
+      'https://github.com/reo7sp/GoToHack2',
+      'GitHub'
+  ) }}
 </ul>
 
 <h3>Game development</h3>
@@ -74,7 +92,9 @@
       ['employment', 'unity', 'unity', 'unity'],
       'My Little Pony and Rayman Legends crossover game. Features cool graphics',
       'http://raycordlegends.com',
-      'raycordlegends.com'
+      'raycordlegends.com',
+      'https://youtu.be/8B8y9jDU9Jw',
+      'YouTube'
   ) }}
 
   {{ item(
@@ -99,7 +119,9 @@
       ['oss', 'cocos', 'coffee'],
       'MVC microframework for cocos2d-x javascript games',
       'https://github.com/reo7sp/kaniku',
-      'GitHub'
+      'GitHub',
+      'https://www.npmjs.com/package/kaniku',
+      'npm'
   ) }}
 
   {{ item(
@@ -159,7 +181,9 @@
       ['oss', 'coffee'],
       'Fancy getter and setter generation in CoffeeScript',
       'https://github.com/reo7sp/coffeescript-accessors',
-      'GitHub'
+      'GitHub',
+      'https://www.npmjs.com/package/coffeescript-accessors',
+      'npm'
   ) }}
 
   {{ item(
