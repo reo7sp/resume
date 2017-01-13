@@ -1,4 +1,4 @@
-{% macro item(title, labels, labelsClass, description, link, linkTitle, secondLink, secondLinkTitle) %}
+{% macro item(title, labels, labelsClass, description, link, linkTitle, secondLink, secondLinkTitle, thirdLink, thirdLinkTitle) %}
   <li class="work__list-elem work-item">
     <div class="work-item__title">{{ title }}</div>
     <div class="work-item__info-labels">
@@ -15,6 +15,9 @@
       {% endif %}
       {% if secondLink %}
         <a class="work-item__link" target="_blank" href="{{ secondLink }}">{{ secondLinkTitle }}</a>
+      {% endif %}
+      {% if thirdLink %}
+        <a class="work-item__link" target="_blank" href="{{ thirdLink }}">{{ thirdLinkTitle }}</a>
       {% endif %}
     </div>
   </li>
@@ -80,7 +83,9 @@
       'http://www.slideshare.net/OlegMorozenkov/gotohack2-data-science-hackathon',
       'SlideShare',
       'https://github.com/reo7sp/GoToHack2',
-      'GitHub'
+      'GitHub',
+      'images/certificates/gotohack2.jpg',
+      'Winner certificate'
   ) }}
 </ul>
 
