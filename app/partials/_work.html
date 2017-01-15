@@ -1,4 +1,4 @@
-{% macro item(title, labels, labelsClass, description, link, linkTitle, secondLink, secondLinkTitle, thirdLink, thirdLinkTitle) %}
+{% macro item(title, labels, labelsClass, description, link, linkTitle, secondLink, secondLinkTitle, thirdLink, thirdLinkTitle, githubStarCount) %}
   <li class="work__list-elem work-item">
     <div class="work-item__title">{{ title }}</div>
     <div class="work-item__info-labels">
@@ -18,6 +18,11 @@
       {% endif %}
       {% if thirdLink %}
         <a class="work-item__link" target="_blank" href="{{ thirdLink }}">{{ thirdLinkTitle }}</a>
+      {% endif %}
+      {% if githubStarCount %}
+      <span class="work-item__stat">
+        <svg aria-label="stars" height="18" role="img" version="1.1" viewBox="0 -4 14 18" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path></svg>{{ githubStarCount }}+
+      </span>
       {% endif %}
     </div>
   </li>
@@ -177,7 +182,12 @@
       ['oss', 'cpp', 'cpp', 'telegram'],
       'C++ library for Telegram bot API',
       'https://github.com/reo7sp/tgbot-cpp',
-      'GitHub'
+      'GitHub',
+      null,
+      null,
+      null,
+      null,
+      60
   ) }}
 
   {{ item(
