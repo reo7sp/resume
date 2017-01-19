@@ -17,7 +17,7 @@
         <a class="work-item__link" target="_blank" href="{{ secondLink }}">{{ secondLinkTitle }}</a>
       {% endif %}
       {% if thirdLink %}
-        <a class="work-item__link" target="_blank" href="{{ thirdLink }}">{{ thirdLinkTitle }}</a>
+        <a class="work-item__link" target="_blank" href="{{ thirdLink }}"><i>{{ thirdLinkTitle }}</i></a>
       {% endif %}
       {% if githubStarCount %}
       <span class="work-item__stat">
@@ -46,8 +46,8 @@
 
   {{ item(
       'Face3dMatch',
-      ['computer vision', 'open source', 'android', 'scala'],
-      ['science', 'oss', 'android', 'scala'],
+      ['computer vision', 'open source', 'scala', 'android'],
+      ['science', 'oss', 'scala', 'android'],
       'Android app which authorizes user using 3d model of the face',
       'https://github.com/reo7sp/Face3dMatch',
       'GitHub'
@@ -94,19 +94,10 @@
   ) }}
 
   {{ item(
-      'GoTo ML summer 2016 test task',
-      ['open source', 'recommendation system', 'python', 'svd'],
-      ['oss', 'science', 'python', 'science'],
-      'Test task for GoTo Machine Learning school in summer 2016',
-      'https://github.com/reo7sp/GoToS2016-TestTask',
-      'GitHub'
-  ) }}
-
-  {{ item(
       'GoToHack test task',
       ['open source', 'scala'],
       ['oss', 'scala'],
-      'Test task for GoToHack BigData hackathon',
+      'Test task for GoToHack Big Data hackathon',
       'https://github.com/reo7sp/GoToHack-TestTask',
       'GitHub'
   ) }}
@@ -117,6 +108,15 @@
       ['oss', 'python', 'employment'],
       'Test task for GoToHack2 Data Science hackathon',
       'https://github.com/reo7sp/GoToHack2-TestTask',
+      'GitHub'
+  ) }}
+
+  {{ item(
+      'GoTo ML summer 2016 test task',
+      ['open source', 'recommendation system', 'python', 'svd'],
+      ['oss', 'science', 'python', 'science'],
+      'Test task for GoTo Machine Learning school in summer 2016',
+      'https://github.com/reo7sp/GoToS2016-TestTask',
       'GitHub'
   ) }}
 </ul>
