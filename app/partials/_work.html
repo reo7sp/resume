@@ -29,8 +29,15 @@
 {% endmacro %}
 
 
+<a name="work"></a>
 <h2>My work</h2>
 
+<div class="work-nav__gotos">
+  <a class="work-nav__goto" href="#work-gamedev">↓ go to gamedev</a>
+  <a class="work-nav__goto" href="#work-webdev">↓ go to web</a>
+</div>
+
+<a name="work-science"></a>
 <h3>Science</h3>
 <ul class="work">
   {{ item(
@@ -98,6 +105,8 @@
   ) }}
 </ul>
 
+<a name="work-gamedev"></a>
+<a class="work-nav__up" href="#work">↑ up</a>
 <h3>Game development</h3>
 <ul class="work">
   {{ item(
@@ -150,6 +159,8 @@
   ) }}
 </ul>
 
+<a name="work-webdev"></a>
+<a class="work-nav__up" href="#work">↑ up</a>
 <h3>Web development</h3>
 <ul class="work">
   {{ item(
@@ -182,6 +193,8 @@
   ) }}
 </ul>
 
+<a name="work-tools"></a>
+<a class="work-nav__up" href="#work">↑ up</a>
 <h3>Tools &amp; Misc</h3>
 <ul class="work">
   {{ item(
@@ -299,3 +312,6 @@
   <img class="contacts-links__icon" src="images/icons/github.png" alt="GitHub">
   <a class="contacts-links__link" target="_blank" href="https://github.com/reo7sp">See full list of my open source projects on GitHub</a>
 </div>
+
+
+<a class="work-nav__up-from-bottom" href="#work">↑ up</a>
