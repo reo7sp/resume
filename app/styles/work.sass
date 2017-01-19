@@ -6,10 +6,12 @@
     font-weight: bold
 
   &__description
-    margin-left: 12px
+    margin-left: 24px
+
+    @media (max-width: 992px)
+      margin-left: 12px
 
     @media (min-width: 992px)
-      margin-left: 24px
       text-shadow: 0 0 6px white, 0 0 6px white, 0 0 6px white
 
   &__links
@@ -22,16 +24,20 @@
     margin-left: 12px
     cursor: pointer
 
+    &--third
+      @media (max-width: 992px)
+        display: block
+
   &__stat
     margin-left: 12px
 
   &__info-labels
-    display: block
-    margin-left: 8px
+    display: inline-block
+    margin-left: 6px
 
-    @media (min-width: 992px)
-      display: inline-block
-      margin-left: 6px
+    @media (max-width: 992px)
+      display: block
+      margin-left: 8px
 
   &__info-label
     display: inline-block
