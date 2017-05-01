@@ -44,7 +44,7 @@ $(document).mousemove (e) ->
 $(window).resize ->
   reInit()
 
-$(document).ready ->
+$ ->
   reInit()
   if isWithGiraffe
     moveGiraffe(0, 0)
