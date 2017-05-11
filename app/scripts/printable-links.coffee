@@ -3,6 +3,7 @@ $ = require 'jquery-slim'
 
 $ ->
   $('a').each ->
+    return if $(this).attr('no-printable-links')?
     classes = $(this).attr('class') ? ''
     href = $(this).attr('href')
     return unless href?
