@@ -224,10 +224,12 @@ gulp.task "build:dist", (callback) ->
   runSequence "clean", "compile:dist", callback
 
 gulp.task "deploy", ["build:dist"], ->
-  surgeOptions =
-    project: "./#{distRoot}"
-    domain: "reo7sp.ru"
+  publisher = $.awspublish.create(require("./aws-config.coffee"))
 
-  $.surge(surgeOptions)
+  gulp.src "#{distRoot}/**/*"
+    .pipe publisher.publish()
+    .pipe publisher.cache()
+    .pipe publisher.sync()
+    .pipe $.awspublish.reporter()
 
 gulp.task "default", ["build:dist"]
