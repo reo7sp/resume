@@ -30,175 +30,140 @@
 
 
 <a name="work"></a>
-<h2>My portfolio</h2>
+<h2>{{ i18n.myPortfolio }}</h2>
 
 <div class="work-nav-gotos">
-  <a class="work-nav-gotos__item" href="#work-gamedev">↓ go to gamedev</a>
-  <a class="work-nav-gotos__item" href="#work-webdev">↓ go to web</a>
+  <a class="work-nav-gotos__item" href="#work-gamedev">↓ {{ i18n.goToGitHub }}</a>
+  <a class="work-nav-gotos__item" href="#work-webdev">↓ {{ i18n.goToWeb }}</a>
 </div>
 
 <a name="work-science"></a>
-<h3>Science</h3>
+<h3>{{ i18n.science }}</h3>
 <ul class="work">
   {{ item(
-      'Voice to vector',
-      ['neural networks', 'voice processing', 'python', 'theano', 'lasagne'],
+      i18n.voiceToVector,
+      [i18n.neuralNetworks, i18n.voiceProcessing, i18n.python, i18n.theano, i18n.lasagne],
       ['science', 'science', 'python', 'python', 'python'],
-      'Making voices comparable',
+      i18n.voiceToVectorDesc,
       'https://github.com/voice2vec/SpeechLock',
-      'GitHub',
+      i18n.github,
       'https://www.slideshare.net/OlegMorozenkov/speechlock-voice-to-vector-voice-similarity',
-      'SlideShare'
+      i18n.slideshare
   ) }}
 
-  <br>
-
   {{ item(
-      'Face3dMatch',
-      ['computer vision', '3d reconstruction', 'scala', 'android'],
+      i18n.face3dMatch,
+      [i18n.computerVision, i18n.dreconstruction, i18n.scala, i18n.android],
       ['science', 'science', 'scala', 'android'],
-      'Sign in via a 3d model of the face',
+      i18n.face3dMatchDesc,
       'https://github.com/reo7sp/Face3dMatch',
-      'GitHub'
+      i18n.github
   ) }}
 
-  <br>
-
   {{ item(
-      'GoToHack2 + MTS',
-      ['hackathon', 'natural text processing', 'python', 'vk-api'],
+      i18n.gotohack2,
+      [i18n.hackathon, i18n.naturalTextProcessing, i18n.python, i18n.vkApi],
       ['employment', 'science', 'python', 'vk'],
-      'Case by MTS company: prediction of post popularity in VK group of TalentEdme project',
+      i18n.gotohack2Desc,
       'https://github.com/reo7sp/vk-text-likeness',
-      'GitHub',
+      i18n.github,
       'https://www.slideshare.net/OlegMorozenkov/gotohack2-data-science-hackathon',
-      'SlideShare',
+      i18n.slideshare,
       'images/certificates/gotohack2.jpg',
-      'Winner certificate'
+      i18n.winnerCertificate
   ) }}
 
-  <br>
-
   {{ item(
-      'Movie recommender system',
-      ['recommender system', 'python'],
+      i18n.movieRecommend,
+      [i18n.recommenderSystem, i18n.python],
       ['science', 'python'],
-      'Test task for GoTo Machine Learning school in summer 2016',
+      i18n.movieRecommendDesc,
       'https://github.com/reo7sp/GoToSchool2016-TestTask',
-      'GitHub'
-  ) }}
-
-  <br>
-
-  {{ item(
-      'WaveFourierTransformTest',
-      ['physics',  'scala'],
-      ['science',  'scala'],
-      'Fourier transform of a wave moving in time',
-      'https://github.com/reo7sp/FourierTransformTest',
-      'GitHub'
-  ) }}
-
-  {{ item(
-      'WaveTest',
-      ['physics',  'scala'],
-      ['science',  'scala'],
-      'Monochromatic waves moving in time',
-      'https://github.com/reo7sp/WaveTest',
-      'GitHub'
-  ) }}
-
-  {{ item(
-      'MagneticTest',
-      ['physics',  'c', 'opengl'],
-      ['science',  'cpp', 'opengl'],
-      'Magnetic field research',
-      'https://github.com/reo7sp/MagneticTest',
-      'GitHub'
+      i18n.github
   ) }}
 </ul>
 
 <a name="work-gamedev"></a>
-<a class="work-nav-up" href="#work">↑ up</a>
-<h3>Gamedev</h3>
+<a class="work-nav-up" href="#work">↑ {{ i18n.up }}</a>
+<h3>{{ i18n.gamedev }}</h3>
 <ul class="work">
   {{ item(
-      'Raycord Legends',
-      ['worked 2014–2015', 'game', 'unity3d', 'uframe', 'spine'],
+      i18n.raycord,
+      [i18n.worked + ' 2014–2015', i18n.game, i18n.unity3d, i18n.uframe, i18n.spine],
       ['employment', 'game', 'unity', 'unity', 'unity'],
-      'Rayman Legends and My Little Pony crossover game. Features cool graphics',
+      i18n.raycordDesc,
       'https://raycordlegends.com',
       'raycordlegends.com',
       'https://youtu.be/8B8y9jDU9Jw',
-      'YouTube'
+      i18n.youTube
   ) }}
 
   {{ item(
-      'MARS 2000',
-      ['freelance', 'game', 'unity3d', 'steam greenlight'],
+      i18n.mars2000,
+      [i18n.freelance, i18n.game, i18n.unity3d, i18n.steamGreenlight],
       ['employment', 'game', 'unity', 'steam'],
-      'Top-down oldschool shooter',
+      i18n.mars2000Desc,
       'https://vk.com/mars_2k',
-      'VK'
+      vk
   ) }}
 
   {{ item(
-      'Let\'s nuke them',
-      ['in development', 'game', 'cocos2d-x', 'coffeescript'],
+      i18n.letsNukeThem,
+      [i18n.inDev, i18n.game, i18n.cocos2d, i18n.coffeescript],
       ['employment', 'game', 'cocos', 'coffee'],
-      'Strategy game'
+      i18n.letsNukeThemDesc
   ) }}
 
   <br>
 
   {{ item(
-      'Kaniku',
-      ['framework', 'cocos2d-x', 'coffeescript'],
+      i18n.kaniku,
+      [i18n.framework, i18n.cocos2d, i18n.coffeescript],
       ['lib', 'cocos', 'coffee'],
-      'MVC microframework for cocos2d-x javascript games',
+      i18n.kanikuDesc,
       'https://github.com/reo7sp/kaniku',
-      'GitHub',
+      i18n.github,
       'https://www.npmjs.com/package/kaniku',
-      'npm',
+      i18n.npm,
       'https://github.com/reo7sp/cocos-starter-kit',
-      'Starter kit'
+      i18n.starterKit
   ) }}
 </ul>
 
 <a name="work-webdev"></a>
-<a class="work-nav-up" href="#work">↑ up</a>
-<h3>Web</h3>
+<a class="work-nav-up" href="#work">↑ {{ i18n.up }}</a>
+<h3>{{ i18n.web }}</h3>
 <ul class="work">
   {{ item(
-      'ATK Gloria',
-      ['working since 2013', 'website', 'ruby'],
+      i18n.atkGloria,
+      [i18n.workingSince + ' 2013', i18n.website, i18n.ruby],
       ['employment', 'site', 'ruby'],
-      'Website of travel company in Nizhny Novgorod',
+      i18n.atkGloriaDesc,
       'https://gloria-nnov.ru',
       'gloria-nnov.ru'
   ) }}
 
   {{ item(
-      'Thylogale',
-      ['web app',  'ruby', 'rails'],
+      i18n.thylogale,
+      [i18n.webApp, i18n.ruby, i18n.rails],
       ['webapp',  'ruby', 'rails'],
-      'Content management system for static sites',
+      i18n.thylogaleDesc,
       'https://github.com/reo7sp/thylogale',
-      'GitHub'
+      i18n.github
   ) }}
 </ul>
 
 <a name="work-tools"></a>
-<a class="work-nav-up" href="#work">↑ up</a>
-<h3>Misc</h3>
+<a class="work-nav-up" href="#work">↑ {{ i18n.up }}</a>
+<h3>{{ i18n.misc }}</h3>
 <ul class="work">
   {{ item(
-      'tgbot-cpp',
-      ['library', 'c++', 'boost', 'boost asio', 'telegram-api'],
+      i18n.tgbotCpp,
+      [i18n.library, i18n.cpp, i18n.boost, i18n.boostAsio, i18n.telegramApi],
       ['lib', 'cpp', 'cpp', 'cpp', 'telegram'],
-      'C++ library for Telegram bot API',
+      i18n.tgbotCppDesc,
       'https://github.com/reo7sp/tgbot-cpp',
-      'GitHub',
+      i18n.github,
       null,
       null,
       null,
@@ -207,12 +172,12 @@
   ) }}
 
   {{ item(
-      'VK Channelify',
-      ['bot', 'python', 'telegram-api', 'vk-api'],
+      i18n.vkChannelify,
+      [i18n.bot, i18n.python, i18n.telegramApi, i18n.vkApi],
       ['bot', 'python', 'telegram', 'vk'],
-      'Create Telegram channel from VK group',
+      i18n.vkChannelifyDesc,
       'https://github.com/reo7sp/vk-channelify',
-      'GitHub',
+      i18n.github,
       'https://t.me/vk_channelify_bot',
       '@vk_channelify_bot'
   ) }}
@@ -221,10 +186,10 @@
 <div class="github-footer">
   <p class="github-footer__first">
     <img class="contacts-links__icon" src="images/icons/github.png" alt="GitHub">
-    <a class="contacts-links__link" target="_blank" href="https://github.com/reo7sp">See my open source projects on GitHub →</a>
+    <a class="contacts-links__link" target="_blank" href="https://github.com/reo7sp">{{ i18n.seeGitHub }} →</a>
   </p>
   <p class="github-footer__second">
-    By language:
+    {{ i18n.byLang }}:
     <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=java">Java</a><b>,</b>
     <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=c%2B%2B">C++</a><b>,</b>
     <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=go">Go</a><b>,</b>
@@ -233,4 +198,4 @@
   </p>
 </div>
 
-<a class="work-nav-up-from-bottom" href="#work">↑ up</a>
+<a class="work-nav-up-from-bottom" href="#work">↑ {{ i18n.up }}</a>

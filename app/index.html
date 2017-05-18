@@ -1,16 +1,15 @@
+{% import 'partials/i18n/_en.html' as i18n %}
+
 {% extends 'templates/_base.html' %}
 
-
-{% block title %}Oleg Morozenkov{% endblock %}
-
+{% block title %}{{ i18n.oleg }} {{ i18n.morozenkov }}{% endblock %}
 
 {% block body %}
-
 
 <div class="container">
   <header>
     <a href="https://reo7sp.ru" no-printable-links class="header-site-link">reo7sp.ru</a>
-    <h1>Oleg<span class="break-on-mobile"> </span>Morozenkov</h1>
+    <h1>{{ i18n.oleg }}<span class="break-on-mobile"> </span>{{ i18n.morozenkov }}</h1>
     <p>@<b>reo7sp</b></p>
   </header>
 
@@ -27,9 +26,8 @@
   </section>
 
   <aside class="giraffe-background-notice">
-    <small class="visible-md gray">Open this page on desktop to see giraffe with cool parallax effect</small>
+    <small class="visible-md gray">{{ i18n.giraffeNotice }}</small>
   </aside>
 </div>
-
 
 {% endblock %}
