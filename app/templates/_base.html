@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ i18n.langCode }}">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,7 @@
     <script src="scripts/app.js" defer></script>
 
     <title>{% block title %}{% endblock %}</title>
-    <meta name="description" content="I'm keen on Data science, Game development and Web"> 
+    <meta name="description" content="{{ i18n.pageDesc }}">
 
     {% block head %}{% endblock %}
   </head>
