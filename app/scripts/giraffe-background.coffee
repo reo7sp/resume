@@ -4,6 +4,7 @@ $ = require 'jquery-slim'
 width = null
 height = null
 isWithGiraffe = null
+giraffeHiText = null
 
 reInit = ->
   width = $(window).width()
@@ -14,7 +15,7 @@ reInit = ->
     if isWithGiraffe
       $('.giraffe-background_mobile').remove()
       $(document.body).append('<img class="giraffe-background giraffe-background_giraffe" src="images/giraffe.png">')
-      $(document.body).append('<div class="giraffe-background giraffe-background_dialog">Hi there</div>')
+      $(document.body).append('<div class="giraffe-background giraffe-background_dialog">' + giraffeHiText + '</div>')
       $(document.body).append('<div class="giraffe-background giraffe-background_back" src="images/background.jpg"></div>')
     else
       $('.giraffe-background_giraffe').remove()
@@ -45,6 +46,7 @@ $(window).resize ->
   reInit()
 
 $ ->
+  giraffeHiText = $('#giraffe-hi-text').text()
   reInit()
   if isWithGiraffe
     moveGiraffe(0, 0)
