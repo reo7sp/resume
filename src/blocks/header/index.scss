@@ -1,0 +1,41 @@
+.page-header {
+    @media (max-width: 480px) {
+        height: 130px;
+    }
+    @media (min-width: 480px) {
+        height: 78px;
+    }
+
+    &__title {
+        margin: 0;
+        padding-top: 13px;
+        padding-bottom: 13px;
+
+        @media (max-width: 480px) {
+            line-height: 39px;
+        }
+    }
+
+    &__subtitle {
+        margin: 0;
+    }
+
+    &__link {
+        display: none;
+
+        @media print {
+            display: inline-block;
+            float: right;
+            line-height: 37px;
+            font-size: 125%;
+        }
+    }
+
+    &__language-switcher {
+        margin-left: 12px;
+
+        @media print {
+            display: none;
+        }
+    }
+}

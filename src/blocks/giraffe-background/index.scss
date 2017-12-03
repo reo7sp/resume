@@ -1,0 +1,64 @@
+.giraffe-background {
+    @media print {
+        display: none;
+    }
+
+    &--giraffe {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: -5;
+        height: 75%;
+    }
+
+    &--dialog {
+        position: fixed;
+        top: 200px;
+        right: 220px;
+        z-index: -1;
+        width: 96px;
+        background-color: white;
+        padding: 16px;
+        border-radius: 8px;
+
+        &::after {
+            border-top: 32px solid #FFF;
+            border-right: 32px solid transparent;
+            width: 0;
+            height: 0;
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -24px;
+            left: 1em;
+            z-index: -2;
+        }
+    }
+
+    &--back {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: -10;
+        width: 500px;
+        height: 100%;
+        background: url(/images/background.jpg) no-repeat;
+        background-size: 600px 150%;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -9;
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+            width: 300px;
+            height: 100%;
+            content: " ";
+        }
+    }
+
+    &--mobile {
+        width: 100%;
+        height: auto;
+    }
+}

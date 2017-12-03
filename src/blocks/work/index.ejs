@@ -1,0 +1,72 @@
+<section class="section-with-margin work">
+    <h2 class="work__title"><%= i18n.myPortfolio %></h2>
+
+    <%# Data science %>
+    <h3 class="work__subtitle"><%= i18n.dataScience %></h3>
+    <ul class="work__list">
+        <%- include('item', {
+        title: i18n.raycord,
+        description: i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc,
+        labels: [
+        {title: 'ruby', cssClass: 'ruby'},
+        {title: 'cpp', cssClass: 'cpp'}
+        ],
+        links: [
+        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
+        ]
+        }) %>
+        <%- include('item', {
+        title: i18n.raycord,
+        description: i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc,
+        labels: [
+        {title: 'ruby', cssClass: 'ruby'},
+        {title: 'cpp', cssClass: 'cpp'}
+        ],
+        links: [
+        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
+        ]
+        }) %>
+        <%- include('item', {
+        title: i18n.raycord,
+        description: i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc,
+        labels: [
+        {title: 'ruby', cssClass: 'ruby'},
+        {title: 'cpp', cssClass: 'cpp'}
+        ],
+        links: [
+        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
+        ]
+        }) %>
+    </ul>
+
+    <%# Non data science %>
+    <h3 class="work__subtitle"><%= i18n.nonDataScience %></h3>
+    <ul class="work__list">
+        <%- include('item', {
+        title: i18n.tgbotCpp,
+        description: i18n.tgbotCppDesc,
+        labels: [
+        {title: 'cpp', cssClass: 'cpp'}
+        ],
+        links: [
+        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
+        ]
+        }) %>
+    </ul>
+</section>
+
+<div class="section-with-margin github-footer">
+    <p class="github-footer__first">
+        <img class="contacts-links__icon" src="images/icons/github.png" alt="GitHub">
+        <a class="contacts-links__link" target="_blank" href="https://github.com/reo7sp"><%= i18n.seeGitHub %> →</a>
+    </p>
+    <p class="github-footer__second">
+        <%= i18n.byLang %>:
+        <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=java">Java</a><b>,</b>
+        <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=c%2B%2B">C++</a><b>,</b>
+        <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=scala">Scala</a><b>,</b>
+        <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=go">Go</a><b>,</b>
+        <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=jupyter%20notebook">Jupyter
+            Notebook</a>
+    </p>
+</div>

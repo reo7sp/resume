@@ -1,0 +1,63 @@
+@import "~normalize.css/normalize.css";
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: #0093d2;
+    text-decoration: none;
+
+    &:hover {
+        color: #0067a8;
+        text-decoration: underline;
+    }
+}
+
+ul {
+    padding-left: 22px;
+}
+
+.gray {
+    color: gray;
+}
+
+.hidden {
+    display: none;
+}
+
+.break-on-mobile {
+    @media (max-width: 480px) {
+        display: block;
+    }
+}
+
+.section-with-margin {
+    margin-top: 26px;
+}
+
+.container {
+    @media (max-width: 640px) {
+        padding: 52px 20px;
+    }
+
+    @media (min-width: 640px) and (max-width: 992px) {
+        padding: 52px 32px;
+    }
+
+    @media (max-width: 992px) {
+        padding-bottom: 0;
+    }
+
+    @media (min-width: 992px) {
+        padding: 52px 64px;
+    }
+
+    @media print {
+        padding: 16px;
+    }
+}

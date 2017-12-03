@@ -1,11 +1,5 @@
-node_modules
-bower_components
-dist
-.tmp
-.idea
+/.idea
+/.vscode
+/node_modules
+/dist
 npm-debug.log
-browserify-cache.json
-rev-manifest.json
-.vscode
-aws-config.coffee
-.awspublish-*

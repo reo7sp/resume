@@ -1,0 +1,16 @@
+<li class="work__list-elem work-item">
+    <div class="work-item__title"><%= title %></div>
+    <div class="work-item__info-labels">
+        <% for (var i = 0; i < labels.length; i++) { %>
+        <div class="work-item__info-label work-item__info-label_<%= labels[i].cssClass %>"><%= labels[i].title %></div>
+        <% } %>
+    </div>
+
+    <div class="work-item__description"><%= description %></div>
+
+    <div class="work-item__links">
+        <% for (var i = 0; i < links.length; i++) { %>
+        <a class="work-item__link" target="_blank" href="<%= links[i].url %>"><%= links[i].title %></a>
+        <% } %>
+    </div>
+</li>
