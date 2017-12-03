@@ -4,7 +4,8 @@ import $ from 'jquery-slim';
 
 $(() => {
     $('a').each(function () {
-        if (!$(this).data('no-printable-links')) {
+        // noinspection EqualityComparisonWithCoercionJS
+        if ($(this).data('no-printable-links') != null) {
             return;
         }
 
