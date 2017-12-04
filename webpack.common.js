@@ -71,16 +71,16 @@ module.exports = {
                 minifyJS: true
             }
         }),
-        new HtmlWebpackPlugin({
-            template: 'src/index-en.ejs',
-            filename: 'en.html',
-            minify: {
-                collapseWhitespace: true,
-                removeComments: true,
-                minifyCSS: true,
-                minifyJS: true
-            }
-        }),
+        // new HtmlWebpackPlugin({
+        //     template: 'src/index-en.ejs',
+        //     filename: 'en.html',
+        //     minify: {
+        //         collapseWhitespace: true,
+        //         removeComments: true,
+        //         minifyCSS: true,
+        //         minifyJS: true
+        //     }
+        // }),
         extractCSS,
         new CopyWebpackPlugin([
             {from: 'src/static', to: '.'}
