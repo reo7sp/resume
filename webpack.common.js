@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
-const extractCSS = new ExtractTextPlugin('styles.[chunkhash].css');
+const extractCSS = new ExtractTextPlugin('styles.[hash].css');
 
 module.exports = {
     entry: {
