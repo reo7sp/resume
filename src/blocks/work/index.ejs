@@ -5,37 +5,72 @@
     <h3 class="work__subtitle"><%= i18n.dataScience %></h3>
     <ul class="work__list">
         <%- include('item', {
-        title: i18n.raycord,
-        description: i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc,
-        labels: [
-        {title: 'ruby', cssClass: 'ruby'},
-        {title: 'cpp', cssClass: 'cpp'}
-        ],
-        links: [
-        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
-        ]
+            title: i18n.kts1,
+            description: i18n.kts1Desc,
+            labels: [
+                {title: i18n.kts, cssClass: 'first'},
+                {title: i18n.fintech, cssClass: 'second'},
+                {title: i18n.recurrentNeuralNetwork, cssClass: 'third'},
+                {title: i18n.python, cssClass: 'python'},
+                {title: i18n.tensorflow, cssClass: 'python'},
+            ],
+            links: [
+            ]
         }) %>
         <%- include('item', {
-        title: i18n.raycord,
-        description: i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc,
-        labels: [
-        {title: 'ruby', cssClass: 'ruby'},
-        {title: 'cpp', cssClass: 'cpp'}
-        ],
-        links: [
-        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
-        ]
+            title: i18n.kts2,
+            description: i18n.kts2Desc,
+            labels: [
+                {title: i18n.kts, cssClass: 'first'},
+                {title: i18n.chatbots, cssClass: 'second'},
+                {title: i18n.naturalTextProcessing, cssClass: 'third'},
+                {title: i18n.python, cssClass: 'python'},
+            ],
+            links: [
+            ]
         }) %>
         <%- include('item', {
-        title: i18n.raycord,
-        description: i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc + i18n.gotohack2Desc,
-        labels: [
-        {title: 'ruby', cssClass: 'ruby'},
-        {title: 'cpp', cssClass: 'cpp'}
-        ],
-        links: [
-        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
-        ]
+            title: i18n.ktsLinguistics,
+            description: i18n.ktsLinguisticsDesc,
+            labels: [
+                {title: i18n.kts, cssClass: 'first'},
+                {title: i18n.openSource, cssClass: 'first'},
+                {title: i18n.naturalTextProcessing, cssClass: 'third'},
+                {title: i18n.python, cssClass: 'python'},
+            ],
+            links: [
+                {title: i18n.github, url: 'https://github.com/ktsstudio/kts_linguistics', stars: 12},
+            ]
+        }) %>
+        <%- include('item', {
+            title: i18n.voiceToVector,
+            description: i18n.voiceToVectorDesc,
+            labels: [
+                {title: i18n.gotoSchool, cssClass: 'first'},
+                {title: i18n.voiceProcessing, cssClass: 'second'},
+                {title: i18n.python, cssClass: 'python'},
+                {title: i18n.theano, cssClass: 'python'},
+                {title: i18n.lasagne, cssClass: 'python'},
+            ],
+            links: [
+                {title: i18n.presentation, url: 'https://github.com/voice2vec/SpeechLock/blob/master/presentation/Презентация.pdf'},
+                {title: i18n.github, url: 'https://github.com/voice2vec/SpeechLock', stars: 10},
+            ]
+        }) %>
+        <%- include('item', {
+            title: i18n.gotohack2,
+            description: i18n.gotohack2Desc,
+            labels: [
+                {title: i18n.hackathon, cssClass: 'first'},
+                {title: i18n.naturalTextProcessing, cssClass: 'second'},
+                {title: i18n.python, cssClass: 'python'},
+                {title: i18n.vkApi, cssClass: 'vk'},
+            ],
+            links: [
+                {title: i18n.presentation, url: 'https://github.com/reo7sp/vk-text-likeness/blob/master/Презентация.pdf'},
+                {title: i18n.github, url: 'https://github.com/reo7sp/vk-text-likeness'},
+                {title: i18n.winnerCertificate, url: '/images/certificates/gotohack2-win.jpg'},
+            ]
         }) %>
     </ul>
 
@@ -43,14 +78,62 @@
     <h3 class="work__subtitle"><%= i18n.nonDataScience %></h3>
     <ul class="work__list">
         <%- include('item', {
-        title: i18n.tgbotCpp,
-        description: i18n.tgbotCppDesc,
-        labels: [
-        {title: 'cpp', cssClass: 'cpp'}
-        ],
-        links: [
-        {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp'}
-        ]
+            title: i18n.tgbotCpp,
+            description: i18n.tgbotCppDesc,
+            labels: [
+                {title: i18n.library, cssClass: 'second'},
+                {title: i18n.cpp, cssClass: 'cpp'},
+                {title: i18n.boost, cssClass: 'cpp'},
+                {title: i18n.boostAsio, cssClass: 'cpp'},
+                {title: i18n.telegramApi, cssClass: 'telegram'},
+            ],
+            links: [
+                {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp', stars: 130, doubleStar: true},
+                {title: i18n.documentation, url: 'http://reo7sp.github.io/tgbot-cpp'},
+            ]
+        }) %>
+        <%- include('item', {
+            title: i18n.vkChannelify,
+            description: i18n.vkChannelifyDesc,
+            labels: [
+                {title: i18n.bot, cssClass: 'second'},
+                {title: i18n.python, cssClass: 'cpp'},
+                {title: i18n.telegramApi, cssClass: 'telegram'},
+                {title: i18n.vkApi, cssClass: 'vk'},
+            ],
+            links: [
+                {title: i18n.github, url: 'https://github.com/reo7sp/vk-channelify', stars: 9},
+                {title: i18n.description, url: 'https://reo7sp.github.io/vk-channelify'},
+            ]
+        }) %>
+        <%- include('item', {
+            title: i18n.raycord,
+            description: i18n.raycordDesc,
+            labels: [
+                {title: i18n.teamWork, cssClass: 'first'},
+                {title: i18n.game, cssClass: 'second'},
+                {title: i18n.unity3d, cssClass: 'unity'},
+                {title: i18n.uframe, cssClass: 'unity'},
+                {title: i18n.spine, cssClass: 'unity'},
+            ],
+            links: [
+                {title: i18n.vk, url: 'https://vk.com/discord_replies'},
+                {title: i18n.youTube, url: 'https://youtu.be/8B8y9jDU9Jw'},
+            ]
+        }) %>
+        <%- include('item', {
+            title: i18n.mars2000,
+            description: i18n.mars2000Desc,
+            labels: [
+                {title: i18n.freelance, cssClass: 'first'},
+                {title: i18n.game, cssClass: 'second'},
+                {title: i18n.unity3d, cssClass: 'unity'},
+                {title: i18n.steamGreenlight, cssClass: 'steam'},
+            ],
+            links: [
+                {title: i18n.vk, url: 'https://vk.com/mars_2k'},
+                {title: i18n.steam, url: 'http://steamcommunity.com/sharedfiles/filedetails/?id=729817689'},
+            ]
         }) %>
     </ul>
 </section>
@@ -66,7 +149,6 @@
         <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=c%2B%2B">C++</a><b>,</b>
         <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=scala">Scala</a><b>,</b>
         <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=go">Go</a><b>,</b>
-        <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=jupyter%20notebook">Jupyter
-            Notebook</a>
+        <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=jupyter%20notebook">Jupyter&nbsp;Notebook</a>
     </p>
 </div>

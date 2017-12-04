@@ -22,51 +22,19 @@
     margin: 0;
 
     &__title {
-        display: inline-block;
         font-weight: bold;
-    }
 
-    &__description {
-        margin-left: 24px;
-
-        @media (max-width: 992px) {
-            margin-left: 12px;
+        &--hidden {
+            display: inline-block;
+            content: " ";
+            width: 210px;
+            height: 20px;
+            margin-bottom: -3px;
+            background-color: #333;
         }
-
-        @media (min-width: 992px) and (max-width: 1300px) {
-            text-shadow: 0 0 6px white, 0 0 6px white, 0 0 6px white;
-        }
-    }
-
-    &__links {
-        display: table;
-
-        @media (min-width: 992px) {
-            margin-left: 12px;
-        }
-    }
-
-    &__link {
-        margin-left: 12px;
-        cursor: pointer;
-
-        @media print {
-            display: block;
-        }
-
-        &--third {
-            @media (max-width: 992px) {
-                display: block;
-            }
-        }
-    }
-
-    &__stat {
-        margin-left: 12px;
     }
 
     &__info-labels {
-        display: inline-block;
         margin-left: 6px;
 
         @media (max-width: 992px) {
@@ -85,136 +53,77 @@
         border-radius: 3px;
         padding: 3px 9px;
 
-        &_employment {
+        &--first {
             color: #9c27b0;
             font-style: oblique;
         }
 
-        &_science {
+        &--second {
             color: #e04c1e;
             font-style: oblique;
         }
 
-        &_oss {
-            color: #ffbb79;
-        }
-
-        &_game {
-            color: #e04c1e;
+        &--third {
+            color: #da8735;
             font-style: oblique;
         }
 
-        &_unity {
-            color: #00b37d;
-        }
-
-        &_cocos {
-            color: #0062b3;
-        }
-
-        &_steam {
-            color: #669900;
-        }
-
-        &_coffee {
-            color: #52439d;
-        }
-
-        &_yeoman {
-            color: #ae6832;
-        }
-
-        &_gulp {
-            color: #c81e32;
-        }
-
-        &_python {
+        &--python {
             color: #3c89c3;
         }
 
-        &_site {
-            color: #e04c1e;
-            font-style: oblique;
-        }
-
-        &_webapp {
-            color: #e04c1e;
-            font-style: oblique;
-        }
-
-        &_android {
-            color: #39b135;
-        }
-
-        &_scala {
-            color: #dd0000;
-        }
-
-        &_java {
-            color: #f55e00;
-        }
-
-        &_ruby {
-            color: #ff1a1a;
-        }
-
-        &_rails {
-            color: #dd0000;
-        }
-
-        &_cpp {
+        &--cpp {
             color: #0054a0;
         }
 
-        &_telegram {
-            color: #0093d6;
-        }
-
-        &_bash {
-            color: #32ae4f;
-        }
-
-        &_dokku {
-            color: #00d2d2;
-        }
-
-        &_docker {
-            color: #009dc9;
-        }
-
-        &_opengl {
-            color: #4e83a0;
-        }
-
-        &_libgdx {
-            color: #f52626;
-        }
-
-        &_minecraft {
-            color: #873f12;
-        }
-
-        &_vim {
-            color: #00a94c;
-        }
-
-        &_telegram {
+        &--telegram {
             color: #3c89c3;
         }
 
-        &_vk {
+        &--vk {
             color: #3c89c3;
         }
 
-        &_lib {
-            color: #e04c1e;
-            font-style: oblique;
+        &--unity {
+            color: #00b37d;
         }
 
-        &_bot {
-            color: #e04c1e;
-            font-style: oblique;
+        &--steam {
+            color: #669900;
         }
+    }
+
+    &__description {
+        margin-left: 12px;
+
+        @media (min-width: 992px) and (max-width: 1300px) {
+            text-shadow: 0 0 6px white, 0 0 6px white, 0 0 6px white;
+        }
+    }
+
+    &__links {
+    }
+
+    &__link {
+        margin-left: 12px;
+        cursor: pointer;
+
+        @media print {
+            display: block;
+        }
+    }
+}
+
+.work-item-stat {
+    color: #d29b00;
+    fill: #d29b00;
+
+    &__double-star {
+        margin-left: -4px;
+    }
+
+    &__count {
+        margin-left: -2px;
     }
 }
 
