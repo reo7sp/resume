@@ -12,7 +12,7 @@ module.exports = {
         main: './src/index.js'
     },
     output: {
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[hash].js',
         path: path.join(__dirname, 'dist')
     },
     module: {
