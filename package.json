@@ -5,7 +5,8 @@
     "scripts": {
         "start": "http-server dist -o",
         "build": "webpack --config webpack.prod.js",
-        "watch": "webpack-dev-server --open --config webpack.dev.js"
+        "watch": "webpack-dev-server --open --config webpack.dev.js",
+        "deploy": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-1 --bucket oleg.rocks --deleteRemoved --profile 'oleg.rocks-s3-upload'"
     },
     "repository": {
         "type": "git",
@@ -38,6 +39,7 @@
         "http-server": "^0.10.0",
         "node-sass": "^4.7.2",
         "postcss-loader": "^2.0.9",
+        "s3-deploy": "^0.8.0",
         "sass-loader": "^6.0.6",
         "uglifyjs-webpack-plugin": "latest",
         "webpack": "^3.9.1",
