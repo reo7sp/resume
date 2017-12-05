@@ -17,7 +17,7 @@ $(() => {
         const isHrefRelative = href.indexOf('http') !== 0 && !(href.indexOf('skype:') === 0 || href.indexOf('mailto:') === 0);
         let title = href.replace('www.', '').replace('skype:', '').replace('?add', '').replace('mailto:', '');
         if (isHrefRelative) {
-            title = 'https://oleg.rocks/' + title;
+            title = 'https://oleg.rocks' + title;
         }
 
         const classes = $(this).attr('class');
