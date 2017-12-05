@@ -1,5 +1,7 @@
 .work {
-    max-width: 576px;
+    @media screen {
+        max-width: 576px;
+    }
 
     &__title {
         margin: 0;
@@ -104,9 +106,9 @@
     &__links {
     }
 
-    &__link {
+    &__links-entry {
         margin-left: 12px;
-        cursor: pointer;
+        display: inline-block;
 
         @media print {
             display: block;
