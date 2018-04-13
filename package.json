@@ -1,6 +1,6 @@
 {
     "name": "oleg.rocks",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "",
     "scripts": {
         "start": "http-server dist -o",
@@ -11,14 +11,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/reo7sp/site.git"
+        "url": "git+https://github.com/reo7sp/resume.git"
     },
     "author": "Oleg Morozenkov",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/reo7sp/site/issues"
+        "url": "https://github.com/reo7sp/resume/issues"
     },
-    "homepage": "https://github.com/reo7sp/site#readme",
+    "homepage": "https://github.com/reo7sp/resume#readme",
     "dependencies": {
         "jquery-slim": "^3.0.0",
         "normalize.css": "^7.0.0"
