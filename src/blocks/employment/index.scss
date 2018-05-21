@@ -13,8 +13,6 @@
 }
 
 .employment-item {
-    height: 104px;
-
     &__header {
         position: relative;
         height: 36px;
@@ -40,5 +38,56 @@
 
     &__text {
         margin: 0 0 0 44px;
+    }
+
+    &__info-labels {
+        margin-left: 54px;
+    }
+
+    &__info-label {
+        display: inline-block;
+        margin-left: 4px;
+        line-height: 1em;
+        color: #222;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 3px 9px;
+
+        &--golang {
+            color: #a9c9e7;
+        }
+
+        &--tarantool {
+            color: #ff002d;
+        }
+
+        &--postgresql {
+            color: #266692;
+        }
+
+        &--fasthttp {
+            color: #a9c9e7;
+        }
+
+        &--rpm {
+            color: #010101;
+        }
+
+        &--python {
+            color: #3c89c3;
+        }
+
+        &--tensorflow {
+            color: #ff8804;
+        }
+
+        &--keras {
+            color: #d00000;
+        }
+
+        &--mongodb {
+            color: #3e9e31;
+        }
     }
 }
