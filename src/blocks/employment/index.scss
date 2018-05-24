@@ -41,7 +41,9 @@
     }
 
     &__info-labels {
-        margin-left: 54px;
+        margin-left: 40px;
+        margin-top: -2px;
+        margin-bottom: 2px;
     }
 
     &__info-label {
@@ -55,11 +57,11 @@
         padding: 3px 9px;
 
         &--golang {
-            color: #a9c9e7;
+            color: #0069cc;
         }
 
         &--tarantool {
-            color: #ff002d;
+            color: #e00000;
         }
 
         &--postgresql {
@@ -67,7 +69,7 @@
         }
 
         &--fasthttp {
-            color: #a9c9e7;
+            color: #0069cc;
         }
 
         &--rpm {
