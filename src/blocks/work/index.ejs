@@ -1,141 +1,173 @@
 <section class="section-with-margin work">
-    <h2 class="work__title"><%= i18n.myPortfolio %></h2>
+    <h2 class="work__title">Портфолио</h2>
 
     <%# Data science %>
-    <h3 class="work__subtitle"><%= i18n.dataScience %></h3>
+    <h3 class="work__subtitle">Анализ данных</h3>
     <ul class="work__list">
         <%- include('item', {
-            title: i18n.kts1,
-            description: i18n.kts1Desc,
+            title: false,
+            description: `
+                Инвестиционная компания.
+                <br>
+                Разрабатывал сервис, который предсказывает, какие рыночные стратегии заказчика будут прибыльными на следующий день.
+                <br>
+                Использовал рекурентные нейронные сети и выводил дополнительные эвристики для улучшения результата.
+            `,
             labels: [
-                {title: i18n.kts, cssClass: 'first'},
-                {title: i18n.fintech, cssClass: 'second'},
-                {title: i18n.recurrentNeuralNetwork, cssClass: 'third'},
-                {title: i18n.python, cssClass: 'python'},
-                {title: i18n.tensorflow, cssClass: 'python'},
+                {title: "kts", cssClass: 'first'},
+                {title: "финтех", cssClass: 'second'},
+                {title: "рекурентные нейросети", cssClass: 'third'},
+                {title: "python", cssClass: 'python'},
+                {title: "tensorflow", cssClass: 'python'},
             ],
             links: [
             ]
         }) %>
         <%- include('item', {
-            title: i18n.kts2,
-            description: i18n.kts2Desc,
+            title: false,
+            description: `
+                Инвестиционная компания.
+                <br>
+                Разрабатывал сервис, который предсказывает, какие рыночные стратегии заказчика будут прибыльными на следующий день.
+                <br>
+                Использовал рекурентные нейронные сети и выводил дополнительные эвристики для улучшения результата.
+            `,
             labels: [
-                {title: i18n.kts, cssClass: 'first'},
-                {title: i18n.chatbots, cssClass: 'second'},
-                {title: i18n.naturalTextProcessing, cssClass: 'third'},
-                {title: i18n.python, cssClass: 'python'},
+                {title: "kts", cssClass: 'first'},
+                {title: "чатботы", cssClass: 'second'},
+                {title: "обработка текста", cssClass: 'third'},
+                {title: "python", cssClass: 'python'},
             ],
             links: [
             ]
         }) %>
         <%- include('item', {
-            title: i18n.ktsLinguistics,
-            description: i18n.ktsLinguisticsDesc,
+            title: "kts_linguistics",
+            description: `
+                Библиотека для работы с лингвистикой.
+                <br>
+                Она включает в себя фонетизацию русского текста, исправление опечаток, репозитории с русскими текстами и словари синонимов.
+            `,
             labels: [
-                {title: i18n.kts, cssClass: 'first'},
-                {title: i18n.openSource, cssClass: 'first'},
-                {title: i18n.library, cssClass: 'second'},
-                {title: i18n.naturalTextProcessing, cssClass: 'third'},
-                {title: i18n.python, cssClass: 'python'},
+                {title: "kts", cssClass: 'first'},
+                {title: "open source", cssClass: 'first'},
+                {title: "библиотека", cssClass: 'second'},
+                {title: "обработка текста", cssClass: 'third'},
+                {title: "python", cssClass: 'python'},
             ],
             links: [
-                {title: i18n.github, url: 'https://github.com/ktsstudio/kts_linguistics', stars: 15},
+                {title: "Гитхаб", url: 'https://github.com/ktsstudio/kts_linguistics', stars: 15},
             ]
         }) %>
         <%- include('item', {
-            title: i18n.voiceToVector,
-            description: i18n.voiceToVectorDesc,
+            title: "Voice to vector",
+            description: `
+                Сравнивание голосов на одинаковость. Преобразование голоса в вектор.
+                <br>
+                Делали преобразование Фурье для получения спектрограмм. Использовали триплет из сверточных нейросетей для получения вектора.
+            `,
             labels: [
-                {title: i18n.gotoSchool, cssClass: 'first'},
-                {title: i18n.voiceProcessing, cssClass: 'second'},
-                {title: i18n.python, cssClass: 'python'},
-                {title: i18n.theano, cssClass: 'python'},
-                {title: i18n.lasagne, cssClass: 'python'},
+                {title: "goto school", cssClass: 'first'},
+                {title: "обработка голоса", cssClass: 'second'},
+                {title: "python", cssClass: 'python'},
+                {title: "theano", cssClass: 'python'},
+                {title: "lasagne", cssClass: 'python'},
             ],
             links: [
-                {title: i18n.presentation, url: '/presentations/voice2vec.pdf'},
-                {title: i18n.github, url: 'https://github.com/voice2vec/SpeechLock', stars: 13},
+                {title: "Презентация", url: '/presentations/voice2vec.pdf'},
+                {title: "Гитхаб", url: 'https://github.com/voice2vec/SpeechLock', stars: 13},
             ]
         }) %>
         <%- include('item', {
-            title: i18n.gotohack2,
-            description: i18n.gotohack2Desc,
+            title: "GoToHack2 + MTS",
+            description: `
+                Кейс от МТС: предсказывание лайков, репостов и лайков от репостов в группе TalentEdme.
+                <br>
+                Сравнивали содержимое постов и интересов пользователя при помощи LDA.
+            `,
             labels: [
-                {title: i18n.hackathon, cssClass: 'first'},
-                {title: i18n.naturalTextProcessing, cssClass: 'second'},
-                {title: i18n.python, cssClass: 'python'},
-                {title: i18n.vkApi, cssClass: 'vk'},
+                {title: "хакатон", cssClass: 'first'},
+                {title: "обработка текста", cssClass: 'second'},
+                {title: "python", cssClass: 'python'},
+                {title: "vk api", cssClass: 'vk'},
             ],
             links: [
-                {title: i18n.presentation, url: '/presentations/gotohack2.pdf'},
-                {title: i18n.github, url: 'https://github.com/reo7sp/vk-text-likeness'},
-                {title: i18n.winnerCertificate, url: '/certificates/gotohack2-win.jpg'},
+                {title: "Презентация", url: '/presentations/gotohack2.pdf'},
+                {title: "Гитхаб", url: 'https://github.com/reo7sp/vk-text-likeness'},
+                {title: "Сертификат&nbsp;победителя", url: '/certificates/gotohack2-win.jpg'},
             ]
         }) %>
     </ul>
 
     <%# Non data science %>
-    <h3 class="work__subtitle"><%= i18n.nonDataScience %></h3>
+    <h3 class="work__subtitle">Не анализ данных</h3>
     <ul class="work__list">
         <%- include('item', {
-            title: i18n.tgbotCpp,
-            description: i18n.tgbotCppDesc,
+            title: "tgbot-cpp",
+            description: `
+                C++ библиотека для Telegram bot API.
+            `,
             labels: [
-                {title: i18n.library, cssClass: 'second'},
-                {title: i18n.openSource, cssClass: 'first'},
-                {title: i18n.cpp, cssClass: 'cpp'},
-                {title: i18n.boost, cssClass: 'cpp'},
-                {title: i18n.boostAsio, cssClass: 'cpp'},
-                {title: i18n.telegramApi, cssClass: 'telegram'},
+                {title: "библиотека", cssClass: 'second'},
+                {title: "open source", cssClass: 'first'},
+                {title: "c++", cssClass: 'cpp'},
+                {title: "boost", cssClass: 'cpp'},
+                {title: "boost asio", cssClass: 'cpp'},
+                {title: "telegram api", cssClass: 'telegram'},
             ],
             links: [
-                {title: i18n.github, url: 'https://github.com/reo7sp/tgbot-cpp', stars: 150, doubleStar: true},
-                {title: i18n.documentation, url: 'https://reo7sp.github.io/tgbot-cpp'},
+                {title: "Гитхаб", url: 'https://github.com/reo7sp/tgbot-cpp', stars: 150, doubleStar: true},
+                {title: "Документация", url: 'https://reo7sp.github.io/tgbot-cpp'},
             ]
         }) %>
         <%- include('item', {
-            title: i18n.vkChannelify,
-            description: i18n.vkChannelifyDesc,
+            title: "VK Channelify",
+            description: `
+                Пересылает новости из группы ВК в Телеграмм канал.
+            `,
             labels: [
-                {title: i18n.bot, cssClass: 'second'},
-                {title: i18n.openSource, cssClass: 'first'},
-                {title: i18n.python, cssClass: 'cpp'},
-                {title: i18n.telegramApi, cssClass: 'telegram'},
-                {title: i18n.vkApi, cssClass: 'vk'},
+                {title: "bot", cssClass: 'second'},
+                {title: "open source", cssClass: 'first'},
+                {title: "python", cssClass: 'cpp'},
+                {title: "telegram api", cssClass: 'telegram'},
+                {title: "vk api", cssClass: 'vk'},
             ],
             links: [
-                {title: i18n.github, url: 'https://github.com/reo7sp/vk-channelify', stars: 13},
-                {title: i18n.description, url: 'https://reo7sp.github.io/vk-channelify'},
+                {title: "Гитхаб", url: 'https://github.com/reo7sp/vk-channelify', stars: 13},
+                {title: "Описание", url: 'https://reo7sp.github.io/vk-channelify'},
             ]
         }) %>
         <%- include('item', {
-            title: i18n.raycord,
-            description: i18n.raycordDesc,
+            title: "Raycord Legends",
+            description: `
+                MLP & Rayman Legends кроссовер.
+            `,
             labels: [
-                {title: i18n.teamWork, cssClass: 'first'},
-                {title: i18n.game, cssClass: 'second'},
-                {title: i18n.unity3d, cssClass: 'unity'},
-                {title: i18n.uframe, cssClass: 'unity'},
-                {title: i18n.spine, cssClass: 'unity'},
+                {title: "работа в команде", cssClass: 'first'},
+                {title: "игровой проект", cssClass: 'second'},
+                {title: "unity3d", cssClass: 'unity'},
+                {title: "uframe", cssClass: 'unity'},
+                {title: "spine", cssClass: 'unity'},
             ],
             links: [
-                {title: i18n.vk, url: 'https://vk.com/discord_replies'},
-                {title: i18n.youTube, url: 'https://youtu.be/8B8y9jDU9Jw'},
+                {title: "ВК", url: 'https://vk.com/discord_replies'},
+                {title: "Ютюб", url: 'https://youtu.be/8B8y9jDU9Jw'},
             ]
         }) %>
         <%- include('item', {
-            title: i18n.mars2000,
-            description: i18n.mars2000Desc,
+            title: "MARS 2000",
+            description: `
+                Олдскульный top-down шутер.
+            `,
             labels: [
-                {title: i18n.freelance, cssClass: 'first'},
-                {title: i18n.game, cssClass: 'second'},
-                {title: i18n.unity3d, cssClass: 'unity'},
-                {title: i18n.steamGreenlight, cssClass: 'steam'},
+                {title: "фриланс", cssClass: 'first'},
+                {title: "игровой проект", cssClass: 'second'},
+                {title: "unity3d", cssClass: 'unity'},
+                {title: "steam greenlight", cssClass: 'steam'},
             ],
             links: [
-                {title: i18n.vk, url: 'https://vk.com/mars_2k'},
-                {title: i18n.steam, url: 'https://steamcommunity.com/sharedfiles/filedetails/?id=729817689'},
+                {title: "ВК", url: 'https://vk.com/mars_2k'},
+                {title: "Стим", url: 'https://steamcommunity.com/sharedfiles/filedetails/?id=729817689'},
             ]
         }) %>
     </ul>
@@ -144,10 +176,10 @@
 <div class="section-with-margin github-footer">
     <p class="github-footer__first">
         <img class="contacts-links__icon" src="images/icons/github.png" alt="GitHub">
-        <a class="contacts-links__link" target="_blank" href="https://github.com/reo7sp"><%= i18n.seeGitHub %> →</a>
+        <a class="contacts-links__link" target="_blank" href="https://github.com/reo7sp">Посмотреть опенсорс на Гитхабе →</a>
     </p>
     <p class="github-footer__second">
-        <%= i18n.byLang %>:
+        По языкам:
         <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=jupyter%20notebook">Jupyter&nbsp;Notebook</a><b>,</b>
         <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=scala">Scala</a><b>,</b>
         <a target="_blank" href="https://github.com/reo7sp?utf8=✓&tab=repositories&q=&language=c%2B%2B">C++</a><b>,</b>
