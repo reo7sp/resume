@@ -23,12 +23,4 @@
             font-size: 125%;
         }
     }
-
-    &__language-switcher {
-        margin-left: 12px;
-
-        @media print {
-            display: none;
-        }
-    }
 }
