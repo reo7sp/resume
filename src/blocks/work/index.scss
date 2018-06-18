@@ -109,10 +109,6 @@
     &__links-entry {
         margin-left: 12px;
         display: inline-block;
-
-        @media print {
-            display: block;
-        }
     }
 }
 
@@ -130,10 +126,6 @@
 }
 
 .github-footer {
-    @media print {
-        display: none;
-    }
-
     &__first {
         margin: 0;
     }
@@ -144,5 +136,11 @@
         @media (min-width: 992px) {
             margin-left: 36px;
         }
+    }
+}
+
+.extra-footer {
+    @media print {
+        display: none;
     }
 }

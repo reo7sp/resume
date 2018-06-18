@@ -6,7 +6,7 @@
         "start": "http-server dist -o",
         "build": "webpack --config webpack.prod.js",
         "watch": "webpack-dev-server --open --config webpack.dev.js",
-        "deploy": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-1 --bucket oleg.rocks --deleteRemoved --profile 'oleg.rocks-s3-upload'",
+        "deploy": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-1 --bucket oleg.rocks --profile 'oleg.rocks-s3-upload'",
         "build-deploy": "npm run build && npm run deploy"
     },
     "repository": {
