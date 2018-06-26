@@ -54,6 +54,8 @@
         border: 1px solid #ccc;
         border-radius: 3px;
         padding: 3px 9px;
+        print-color-adjust: exact; 
+        -webkit-print-color-adjust: exact; 
 
         &--first {
             color: #9c27b0;
@@ -132,10 +134,7 @@
 
     &__second {
         margin: 0;
-
-        @media (min-width: 992px) {
-            margin-left: 36px;
-        }
+        margin-left: 36px;
     }
 }
 
