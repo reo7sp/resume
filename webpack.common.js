@@ -62,7 +62,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            template: 'src/index.ejs',
+            template: 'src/index-ru.ejs',
             filename: 'index.html',
             minify: {
                 collapseWhitespace: true,
@@ -71,6 +71,16 @@ module.exports = {
                 minifyJS: true
             }
         }),
+        // new HtmlWebpackPlugin({
+        //     template: 'src/index-en.ejs',
+        //     filename: 'en.html',
+        //     minify: {
+        //         collapseWhitespace: true,
+        //         removeComments: true,
+        //         minifyCSS: true,
+        //         minifyJS: true
+        //     }
+        // }),
         extractCSS,
         new CopyWebpackPlugin([
             {from: 'src/static', to: '.'}

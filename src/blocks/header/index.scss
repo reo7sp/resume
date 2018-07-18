@@ -23,4 +23,17 @@
             padding-top: 12px;
         }
     }
+
+    &__language-switcher {
+        margin: 0;
+        color: hsl(0, 0%, 70%);
+
+        a {
+            color: hsl(198, 40%, 70%);
+
+            &:hover {
+                color: hsl(18, 40%, 70%);
+            }
+        }
+    }
 }

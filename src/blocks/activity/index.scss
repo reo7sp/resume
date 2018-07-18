@@ -1,4 +1,8 @@
 .activity {
+    @media screen {
+        max-width: 576px;
+    }
+
     &__title {
         margin: 0;
         padding: 13px 0;
