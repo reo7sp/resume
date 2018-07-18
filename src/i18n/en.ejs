@@ -93,6 +93,15 @@ Case: MTS: predicting the likes, reposts and likes from the posts in the group T
 We compared the content of posts and user's interests using LDA.
 ` %>
 
+<% i18n.movieRecommendations = "Recommendation system of films" %>
+<% i18n.movieRecommendationsDesc = `
+Implemented two ways and as an answer took the maximum probability:
+<br>
+1. Used the SVD decomposition of the matrix {people x movies} and took the cosine distance between U[person, all components] * s and Vt[all components, film].
+<br>
+2. Calculated the cosine distance between rows of matrix {movies x (genres + signs)} and {people x (genres + signs)}.
+` %>
+
 <% i18n.tgbotCpp = "tgbot-cpp" %>
 <% i18n.tgbotCppDesc = `
 C++ library for Telegram bot API.
@@ -101,16 +110,6 @@ C++ library for Telegram bot API.
 <% i18n.vkChannelify = "VK Channelify" %>
 <% i18n.vkChannelifyDesc = `
 Forwards posts from the VK group to the Telegram channel.
-` %>
-
-<% i18n.raycord = "Raycord Legends" %>
-<% i18n.raycordDesc = `
-MLP & Rayman Legends crossover.
-` %>
-
-<% i18n.mars2000 = "MARS 2000" %>
-<% i18n.mars2000Desc = `
-Oldschool top-down shooter.
 ` %>
 
 <%# Portfolio controls %>
@@ -142,6 +141,9 @@ Oldschool top-down shooter.
 <% i18n.vkApi = "vk api" %>
 <% i18n.winnerCertificate = "Winner&nbsp;certificate" %>
 
+<% i18n.recommendSystem = "recommendation system" %>
+<% i18n.report = "Report" %>
+
 <% i18n.cpp = "c++" %>
 <% i18n.boost = "boost" %>
 <% i18n.boostAsio = "boost asio" %>
@@ -150,18 +152,6 @@ Oldschool top-down shooter.
 
 <% i18n.bot = "бот" %>
 <% i18n.description = "Description" %>
-
-<% i18n.teamWork = "team work" %>
-<% i18n.game = "gamedev" %>
-<% i18n.unity3d = "unity3d" %>
-<% i18n.uframe = "uframe" %>
-<% i18n.spine = "spine" %>
-<% i18n.vk = "VK" %>
-<% i18n.youTube = "YouTube" %>
-
-<% i18n.freelance = "freelance" %>
-<% i18n.steam = "Steam" %>
-<% i18n.steamGreenlight = "steam greenlight" %>
 
 <% i18n.seeGitHub = "See open source on GitHub" %>
 <% i18n.byLang = "By language" %>

@@ -73,6 +73,19 @@
                 {title: i18n.winnerCertificate, url: '/certificates/gotohack2-win.jpg'},
             ]
         }) %>
+        <%- include('item', {
+            title: i18n.movieRecommendations,
+            description: i18n.movieRecommendationsDesc,
+            labels: [
+                {title: i18n.gotoSchool, cssClass: 'first'},
+                {title: i18n.recommendSystem, cssClass: 'second'},
+                {title: i18n.python, cssClass: 'python'},
+            ],
+            links: [
+                {title: i18n.github, url: 'https://github.com/reo7sp/GoToSchool2016-TestTask'},
+                {title: i18n.report, url: 'https://github.com/reo7sp/GoToSchool2016-TestTask/blob/master/3-report.pdf'},
+            ]
+        }) %>
     </ul>
 
     <%# Non data science %>
@@ -107,35 +120,6 @@
             links: [
                 {title: i18n.github, url: 'https://github.com/reo7sp/vk-channelify', stars: 13},
                 {title: i18n.description, url: 'https://reo7sp.github.io/vk-channelify'},
-            ]
-        }) %>
-        <%- include('item', {
-            title: i18n.raycord,
-            description: i18n.raycordDesc,
-            labels: [
-                {title: i18n.teamWork, cssClass: 'first'},
-                {title: i18n.game, cssClass: 'second'},
-                {title: i18n.unity3d, cssClass: 'unity'},
-                {title: i18n.uframe, cssClass: 'unity'},
-                {title: i18n.spine, cssClass: 'unity'},
-            ],
-            links: [
-                {title: i18n.vk, url: 'https://vk.com/discord_replies'},
-                {title: i18n.youTube, url: 'https://youtu.be/8B8y9jDU9Jw'},
-            ]
-        }) %>
-        <%- include('item', {
-            title: i18n.mars2000,
-            description: i18n.mars2000Desc,
-            labels: [
-                {title: i18n.freelance, cssClass: 'first'},
-                {title: i18n.game, cssClass: 'second'},
-                {title: i18n.unity3d, cssClass: 'unity'},
-                {title: i18n.steamGreenlight, cssClass: 'steam'},
-            ],
-            links: [
-                {title: i18n.vk, url: 'https://vk.com/mars_2k'},
-                {title: i18n.steam, url: 'https://steamcommunity.com/sharedfiles/filedetails/?id=729817689'},
             ]
         }) %>
     </ul>
