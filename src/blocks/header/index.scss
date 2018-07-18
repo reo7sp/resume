@@ -35,5 +35,9 @@
                 color: hsl(18, 40%, 70%);
             }
         }
+
+        @media print {
+            display: none;
+        }
     }
 }

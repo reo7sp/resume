@@ -70,12 +70,8 @@
             color: #266692;
         }
 
-        &--fasthttp {
-            color: #0069cc;
-        }
-
-        &--rpm {
-            color: #010101;
+        &--docker {
+            color: #183950;
         }
 
         &--python {
@@ -88,10 +84,6 @@
 
         &--keras {
             color: #d00000;
-        }
-
-        &--mongodb {
-            color: #3e9e31;
         }
     }
 }
