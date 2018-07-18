@@ -95,11 +95,11 @@ We compared the content of posts and user's interests using LDA.
 
 <% i18n.movieRecommendations = "Recommendation system of films" %>
 <% i18n.movieRecommendationsDesc = `
-Implemented two ways and as an answer took the maximum probability:
+Implemented two approaches to score films and as the final result took the maximum probability of them:
 <br>
-1. Used the SVD decomposition of the matrix {people x movies} and took the cosine distance between U[person, all components] * s and Vt[all components, film].
+1. Used the SVD decomposition of {people x movies} matrix and took the cosine distance between U[person, all components] * s and Vt[all components, film].
 <br>
-2. Calculated the cosine distance between rows of matrix {movies x (genres + signs)} and {people x (genres + signs)}.
+2. Calculated the cosine distance between rows of matrices {movies x (genres + signs)} and {people x (genres + signs)}.
 ` %>
 
 <% i18n.tgbotCpp = "tgbot-cpp" %>
