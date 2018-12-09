@@ -7,6 +7,10 @@ body {
     color: #222222;
     print-color-adjust: exact; 
     -webkit-print-color-adjust: exact; 
+
+    @media (min-width: 992px) and (max-width: 1350px) {
+        text-shadow: 0 0 6px white, 0 0 6px white, 0 0 6px white;
+    }
 }
 
 a {
@@ -79,13 +83,19 @@ p {
     margin: ($lineHeight * 2) 100px ($lineHeight * 6) 100px;
 
     @media screen {
-        max-width: 640px;
+        max-width: 600px;
     }
     
     @media screen and (max-width: 640px) {
         margin-top: ($lineHeight * 3);
         margin-left: 20px;
         margin-right: 20px;
+    }
+    
+    @media screen and (min-width: 640px) and (max-width: 1200px) {
+        margin-top: ($lineHeight * 3);
+        margin-left: 50px;
+        margin-right: 50px;
     }
 
     @media print {
