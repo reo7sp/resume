@@ -1,0 +1,355 @@
+$fontSize: 16px;
+$lineHeight: 24px;
+
+body {
+    font-family: sans-serif;
+    font-size: $fontSize;
+    color: #222222;
+    print-color-adjust: exact; 
+    -webkit-print-color-adjust: exact; 
+}
+
+a {
+    color: #0093d2;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 96, 160, 0.2);
+
+    &:hover {
+        color: #d04000;
+        border-bottom-color: rgba(208, 64, 0, 0.2);
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    margin-top: ($lineHeight * 2);
+    margin-bottom: ($lineHeight / 2);
+    line-height: ($lineHeight * 2);
+}
+
+h2 {
+    margin-top: ($lineHeight * 2);
+    margin-bottom: ($lineHeight / 2);
+    line-height: $lineHeight;
+}
+
+h3, h4 {
+    margin-top: $lineHeight;
+    margin-bottom: ($lineHeight / 4);
+    font-size: $fontSize;
+    line-height: $lineHeight;
+}
+
+p {
+    line-height: $lineHeight;
+    margin-top: 0;
+    margin-bottom: ($lineHeight / 4);
+}
+
+@media print {
+    .hide-on-print {
+        display: none;
+    }
+}
+
+@media screen {
+    .hide-on-screen {
+        display: none;
+    }
+}
+
+.shadow-text {
+    color: #888;
+}
+
+.br-line {
+    height: $lineHeight;
+    min-height: $lineHeight;
+}
+
+.br-half-line {
+    height: ($lineHeight / 2);
+    min-height: ($lineHeight / 2);
+}
+
+.site-container {
+    margin: ($lineHeight * 2) 100px ($lineHeight * 6) 100px;
+
+    @media screen {
+        max-width: 640px;
+    }
+    
+    @media screen and (max-width: 640px) {
+        margin-top: ($lineHeight * 3);
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    @media print {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+.site-link {
+    position: absolute;
+    top: ($lineHeight * 2.5);
+    right: 20px;
+}
+
+.links-list {
+    &--inline {
+        display: inline-block;
+        margin-left: 8px;
+    }
+
+    &__item {
+        margin-right: 12px;
+    }
+}
+
+.contacts-links {
+    box-sizing: border-box;
+    height: 208px;
+    padding-top: 8px;
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+
+    &__item {
+        height: 32px;
+
+        &--github {
+            margin-bottom: 8px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: auto;
+        margin-right: 8px;
+    }
+
+    &__link {
+        vertical-align: super;
+
+        &--github {
+            vertical-align: text-top;
+            line-height: 16px;
+            margin-left: -2px;
+        }
+    }
+}
+
+.employment-logo {
+    height: ($lineHeight * 1.5);
+    border-radius: 4px;
+    margin-bottom: -1px;
+
+    &--mini {
+        height: $lineHeight;
+        margin-bottom: -3px;
+    }
+}
+
+.technology-tag {
+    display: inline-block;
+    margin-right: 1px;
+    line-height: 1em;
+    color: #222;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px 9px;
+
+    &--first {
+        color: #e04c1e;
+        font-style: oblique;
+    }
+
+    &--second {
+        color: #9c27b0;
+        font-style: oblique;
+    }
+
+    &--third {
+        color: #da8735;
+        font-style: oblique;
+    }
+
+    &--python {
+        color: #3c89c3;
+    }
+
+    &--cpp {
+        color: #0054a0;
+    }
+
+    &--telegram {
+        color: #3c89c3;
+    }
+
+    &--vk {
+        color: #3c89c3;
+    }
+
+    &--golang {
+        color: #0069cc;
+    }
+
+    &--tarantool {
+        color: #e00000;
+    }
+
+    &--postgresql {
+        color: #266692;
+    }
+
+    &--docker {
+        color: #183950;
+    }
+
+    &--python {
+        color: #3c89c3;
+    }
+
+    &--tensorflow {
+        color: #ff8804;
+    }
+
+    &--keras {
+        color: #d00000;
+    }
+
+    &--clickhouse {
+        color: #ffb02e;
+    }
+
+    &--mongodb {
+        color: #6cad79;
+    }
+
+    &--cockroach {
+        color: #6db037;
+    }
+
+    &--rpm {
+        color: #000000;
+    }
+
+    &--ansible {
+        color: #000000;
+    }
+}
+
+.github-stat {
+    color: #d29b00;
+    fill: #d29b00;
+}
+
+.github-footer {
+    margin-top: ($lineHeight * 2);
+
+    @media print {
+        display: none;
+    }
+
+    &__first {
+        margin: 0;
+    }
+
+    &__second {
+        margin: 0;
+        margin-left: 36px;
+    }
+}
+
+.extra-footer {
+    margin-top: $lineHeight;
+
+    @media print {
+        display: none;
+    }
+}
+
+.giraffe-background-notice {
+    margin-top: ($lineHeight * 2);
+
+    @media (min-width: 992px) {
+        display: none;
+    }
+
+    @media print {
+        display: none;
+    }
+}
+
+.giraffe-background {
+    @media print {
+        display: none;
+    }
+
+    &--giraffe {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        z-index: -5;
+        height: 75%;
+    }
+
+    &--dialog {
+        position: fixed;
+        top: 200px;
+        right: 220px;
+        z-index: -1;
+        width: 96px;
+        background-color: white;
+        padding: 16px;
+        border-radius: 8px;
+
+        &::after {
+            border-top: 32px solid #FFF;
+            border-right: 32px solid transparent;
+            width: 0;
+            height: 0;
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -24px;
+            left: 1em;
+            z-index: -2;
+        }
+    }
+
+    &--back {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: -10;
+        width: 500px;
+        height: 100%;
+        background: url(images/background.jpg) no-repeat;
+        background-size: 600px 150%;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -9;
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+            width: 300px;
+            height: 100%;
+            content: " ";
+        }
+    }
+
+    &--mobile {
+        width: 100%;
+        height: auto;
+    }
+}

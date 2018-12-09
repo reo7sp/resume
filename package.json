@@ -1,0 +1,27 @@
+{
+  "name": "oleg.rocks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reo7sp/resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reo7sp/resume/issues"
+  },
+  "homepage": "https://github.com/reo7sp/resume#readme"
+}
