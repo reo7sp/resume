@@ -23,7 +23,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['babel-preset-env']
+                        presets: ['@babel/preset-env']
                     }
                 }
             },
@@ -54,7 +54,7 @@ module.exports = {
             {
                 test: /\.ejs$/,
                 use: {
-                    loader: 'ejs-simple-loader'
+                    loader: 'ejs-webpack-loader'
                 }
             }
         ]
@@ -62,7 +62,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            template: 'src/index-ru.ejs',
+            template: '!!ejs-webpack-loader!src/index-ru.ejs',
             filename: 'index.html',
             minify: {
                 collapseWhitespace: true,
@@ -72,7 +72,7 @@ module.exports = {
             }
         }),
         new HtmlWebpackPlugin({
-            template: 'src/index-en.ejs',
+            template: '!!ejs-webpack-loader!src/index-en.ejs',
             filename: 'en.html',
             minify: {
                 collapseWhitespace: true,
