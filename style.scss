@@ -5,15 +5,15 @@ body {
     font-family: sans-serif;
     font-size: $fontSize;
     color: #222222;
-    print-color-adjust: exact; 
-    -webkit-print-color-adjust: exact; 
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
 
     @media (min-width: 992px) and (max-width: 1350px) {
         text-shadow: 0 0 6px white, 0 0 6px white, 0 0 6px white;
     }
 }
 
-a {
+@mixin fancy-links {
     color: #0093d2;
     text-decoration: none;
     border-bottom: 1px solid rgba(0, 96, 160, 0.2);
@@ -22,6 +22,20 @@ a {
         color: #d04000;
         border-bottom-color: rgba(208, 64, 0, 0.2);
     }
+}
+
+@mixin supress-fancy-links {
+    color: #222222;
+    border-bottom: none;
+
+    &:hover {
+        color: #222222;
+        border-bottom: none;
+    }
+}
+
+a {
+    @include fancy-links;
 }
 
 img {
@@ -53,15 +67,36 @@ p {
     margin-bottom: ($lineHeight / 4);
 }
 
-@media print {
-    .hide-on-print {
+.hide-on-print {
+    @media print {
         display: none;
     }
 }
 
-@media screen {
-    .hide-on-screen {
+.hide-on-screen {
+    @media screen {
         display: none;
+    }
+}
+
+.printable-link {
+    @media screen {
+        display: none !important;
+    }
+
+    @include supress-fancy-links;
+
+    &__original {
+        @include fancy-links;
+    }
+
+    &__transcript {
+    }
+}
+
+.not-printable-link {
+    @media print {
+        display: none !important;
     }
 }
 
@@ -85,13 +120,13 @@ p {
     @media screen {
         max-width: 600px;
     }
-    
+
     @media screen and (max-width: 640px) {
         margin-top: ($lineHeight * 3);
         margin-left: 20px;
         margin-right: 20px;
     }
-    
+
     @media screen and (min-width: 640px) and (max-width: 1200px) {
         margin-top: ($lineHeight * 3);
         margin-left: 50px;
@@ -114,10 +149,19 @@ p {
     &--inline {
         display: inline-block;
         margin-left: 8px;
+
+        @media print {
+            display: block;
+            margin-left: 0;
+        }
     }
 
     &__item {
         margin-right: 12px;
+
+        @media print {
+            display: block;
+        }
     }
 }
 

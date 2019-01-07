@@ -1,3 +1,4 @@
+// giraffe
 (function () {
 
     var width = null;
@@ -56,6 +57,42 @@
         if (isWithGiraffe) {
             moveGiraffe(0, 0);
         }
+    });
+
+})();
+
+
+// printable links
+(function () {
+
+    $(function () {
+        $('a').each(function () {
+            if ($(this).data('no-printable-links') != null) {
+                return;
+            }
+
+            const href = $(this).attr('href');
+            if (!href) {
+                return;
+            }
+
+            const isHrefRelative = href.indexOf('http') !== 0 && !(href.indexOf('skype:') === 0 || href.indexOf('mailto:') === 0);
+            let linkPrettified = href.replace('www.', '').replace('skype:', '').replace('?add', '').replace('mailto:', '');
+            if (isHrefRelative) {
+                linkPrettified = 'https://oleg.rocks/' + linkPrettified;
+            }
+
+            const originalHtml = $(this).html();
+
+            const classes = $(this).attr('class');
+            $(this).after(`
+                <a class="printable-link ${classes}" href="${href}">
+                    <span class="printable-link__original">${originalHtml}</span>
+                    <span class="printable-link__transcript"> (${linkPrettified})</span>
+                </a>
+            `);
+            $(this).addClass('not-printable-link');
+        });
     });
 
 })();
